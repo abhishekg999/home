@@ -15,20 +15,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 body,
 html {
     margin: 0;
     padding: 0;
-    height: 100vh;
     width: 100vw;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #app {
@@ -36,3 +37,23 @@ body {
     display: flex;
     flex-direction: column;
 }   
+
+
+::-webkit-scrollbar{
+	width: 5px;
+}
+
+::-webkit-scrollbar-track-piece{
+	/* background-color: #FFF; */
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #909090;
+	/* outline: 2px solid #FFF; */
+	outline-offset: -2px;
+	/* border: .1px solid #B7B7B7; */
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #BBBBBB;
+}
