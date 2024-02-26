@@ -57,21 +57,3 @@ body {
 ::-webkit-scrollbar-thumb:hover{
 	background-color: #BBBBBB;
 }
-
-#loading-logo {
-    fill: none;
-    stroke: #67d78e;
-    stroke-dasharray: 2985;
-    animation: draw 2.5s normal forwards cubic-bezier(.66,.97,.68,1.02);
-}
-
-
-@keyframes draw {
-  from {
-    stroke-dashoffset: 2985;
-    fill: #67d78e;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
