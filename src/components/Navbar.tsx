@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'preact/hooks';
+// import { useState, useEffect } from 'preact/hooks';
 
 export function Navbar() {
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+    // const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const checkScreenSize = () => setIsSmallScreen(window.innerWidth <= 768);
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
+    // useEffect(() => {
+    //     const checkScreenSize = () => setIsSmallScreen(window.innerWidth <= 768);
+    //     window.addEventListener('resize', checkScreenSize);
+    //     return () => window.removeEventListener('resize', checkScreenSize);
+    // }, []);
 
 
     return (
