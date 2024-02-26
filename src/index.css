@@ -62,7 +62,7 @@ body {
     fill: none;
     stroke: #67d78e;
     stroke-dasharray: 2985;
-    animation: draw 1s normal forwards cubic-bezier(.66,.97,.68,1.02);
+    animation: draw 2.5s normal forwards cubic-bezier(.66,.97,.68,1.02);
 }
 
 
