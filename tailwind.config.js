@@ -5,10 +5,15 @@ export default {
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-      extend: {},
+      extend: {
+        
+      },
     },
     variants: {
         fill: ['hover', 'focus'],
     },
     plugins: [],
   }
+
+
+  
