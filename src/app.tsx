@@ -25,7 +25,7 @@ export function App() {
                                 </h1>
 
                                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 px-6 py-2">
-                                    Hi! I'm a web developer currently studying Computer Science at the <span className="">UC San Diego</span>. I'm also a <span className="">CTF player</span> playing for L3ak.
+                                    Hi! I'm a software developer currently studying Computer Science at the <span className="">UC San Diego</span>. I'm also a <span className="">CTF player</span> playing for L3ak.
                                 </p>
                             </div>
                         </div>
