@@ -74,7 +74,7 @@ export function App() {
                                             business processes.
                                         </>
                                     }
-                                    skills="ServiceNow, Javascript, Fullstack Development, API Integrations"
+                                    skills="ServiceNow, Javascript, Angular, Fullstack Development, API Integrations"
                                     startDate="Dec 2022"
                                     endDate="Present"
                                 ></ExperienceCard>
