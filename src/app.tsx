@@ -15,7 +15,7 @@ export function App() {
                                     Developer
                                 </div>
                                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 m-1 text-sm dark:bg-gray-800 shadow-md hover:shadow-sm">
-                                    Computer Science Student
+                                    CS Student
                                 </div>
                                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 m-1 text-sm dark:bg-gray-800 shadow-md hover:shadow-sm">
                                     CTF Player
