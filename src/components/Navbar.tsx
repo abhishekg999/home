@@ -1,6 +1,8 @@
+import { routerPage } from "../signals/RouterPageSignal";
+
 export function Navbar() {
     return (
-        <header className="px-4 lg:px-6 h-14 flex">
+        <header className="px-4 lg:px-6 h-14 flex py-2">
 
             <svg
 
@@ -10,7 +12,7 @@ export function Navbar() {
                 fill-rule="nonzero"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                className="width-14 h-14 sm:w-16 sm:h-16 animated-svg"
+                className={`width-14 h-14 sm:w-16 sm:h-16 animated-svg ${routerPage.value === 'Home' ? 'animated-svg-draw' : 'animate-bounce'}`}
                 onClick={() => {
                     window.location.href = "/";
                 }}

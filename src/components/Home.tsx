@@ -1,7 +1,10 @@
 import CloseIcon from "@mui/icons-material/Close";
 import { useEffect, useState } from "preact/hooks";
+import { routerPage } from "../signals/RouterPageSignal";
 
 export function Home(_: any) {
+    routerPage.value = "Home";
+
     const [open, setOpen] = useState(false);
     const copyEmailToClipboard = () => {
         navigator.clipboard.writeText("abhishekgovindarasu@gmail.com");

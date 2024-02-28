@@ -90,6 +90,9 @@ body {
     fill: none;
     stroke: #67d78e;
     stroke-width: 25;
+}
+
+.animated-svg-draw {
     stroke-dasharray: var(--bulba-svg-length);
     stroke-dashoffset: var(--bulba-svg-length);
     animation: draw 3.5s normal forwards cubic-bezier(0.66, 0.97, 0.68, 1.02);
