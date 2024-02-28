@@ -111,15 +111,15 @@ body {
     }
 
     80% {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 10;
         scale: 1.2;
     }
     90% {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 10;
         scale: 1;
     }
     100% {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 10;
         scale: 1;
     }
 }
