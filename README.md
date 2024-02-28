@@ -1,1 +1,1 @@
-# ahh.bet
+# [ahh.bet](https://ahh.bet)
