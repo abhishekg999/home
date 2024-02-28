@@ -1,4 +1,4 @@
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import { useEffect, useState } from "preact/hooks";
 
 export function Home(_: any) {
@@ -13,7 +13,7 @@ export function Home(_: any) {
             setOpen(false);
         }, 1500);
         return () => clearTimeout(timer);
-    })
+    });
 
     return (
         <main className="flex flex-col justify-center items-center">
@@ -25,10 +25,10 @@ export function Home(_: any) {
                         </h1>
 
                         <div className="text-gray-300 px-6 pt-2">
-                            I'm a Computer Science student at UC San Diego. In
-                            my free time, I am a Capture the Flag (CTF) player
-                            specializing in web exploitation and reverse
-                            engineering.
+                            I'm a Software Developer and Computer Science
+                            student at UC San Diego. In my free time, I am a
+                            Capture the Flag (CTF) player specializing in web
+                            exploitation and reverse engineering.
                         </div>
                     </div>
                     <div
@@ -38,7 +38,6 @@ export function Home(_: any) {
                 </div>
 
                 <hr className="w-5/6 max-w-[480px] my-12"></hr>
-
 
                 {/* Last thing of main page will be this */}
                 <div className="mt-6">
@@ -50,15 +49,13 @@ export function Home(_: any) {
                         Contact Me
                     </a>
 
-
                     {open ? (
                         <div className="text-sm flex justify-between fixed bottom-0 bg-gray left-0 m-4 px-4 py-2 min-w-[280px] max-w-[320px] border-2 rounded-lg clipboard-popup">
                             <p> Copied to Clipboard </p>
                             <CloseIcon
                                 onClick={() => setOpen(false)}
                                 className="cursor-pointer hover:"
-                            >
-                            </CloseIcon>
+                            ></CloseIcon>
                         </div>
                     ) : null}
                 </div>

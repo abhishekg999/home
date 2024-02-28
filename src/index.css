@@ -101,7 +101,7 @@ body {
     stroke-width: 40;
 }
 
-
+/* slightly higher stroke-dashoffset as a hack for safari */
 @keyframes draw {
     0% {
         stroke-dashoffset: var(--bulba-svg-length);
@@ -123,26 +123,3 @@ body {
         scale: 1;
     }
 }
-
-@-webkit-keyframes draw {
-    0% {
-        stroke-dashoffset: var(--bulba-svg-length);
-    }
-    70% {
-        scale: 1;
-    }
-
-    80% {
-        stroke-dashoffset: 0;
-        scale: 1.2;
-    }
-    90% {
-        stroke-dashoffset: 0;
-        scale: 1;
-    }
-    100% {
-        stroke-dashoffset: 0;
-        scale: 1;
-    }
-}
-
