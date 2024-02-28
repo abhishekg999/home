@@ -9,13 +9,7 @@ export function Home(_: any) {
                         </h1>
 
                         <div className="text-gray-300 px-6 pt-2">
-                            I'm a software developer currently studying Computer
-                            Science at the{" "}
-                            <span className="text-white">UC San Diego</span>.
-                            I'm also a{" "}
-                            <span className="text-white">CTF player</span>{" "}
-                            playing for team L3ak which is{" "}
-                            <span className="text-white">top 30</span> globally.
+                            I'm a Computer Science student at UC San Diego.
                         </div>
                     </div>
                     <div
