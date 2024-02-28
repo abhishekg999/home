@@ -38,6 +38,8 @@ jobs:
         run: bun install
       - name: Build
         run: bun run build
+      - name: Set 404 to index.html for Pages
+        run: cp dist/index.html dist/404.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

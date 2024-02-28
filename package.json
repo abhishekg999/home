@@ -6,7 +6,7 @@
   "homepage": "https://ahh.bet",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp index.html 404.html",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
