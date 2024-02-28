@@ -1,16 +1,4 @@
-// import { useState, useEffect } from 'preact/hooks';
-
 export function Navbar() {
-    // const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
-    // const [isOpen, setIsOpen] = useState(false);
-
-    // useEffect(() => {
-    //     const checkScreenSize = () => setIsSmallScreen(window.innerWidth <= 768);
-    //     window.addEventListener('resize', checkScreenSize);
-    //     return () => window.removeEventListener('resize', checkScreenSize);
-    // }, []);
-
-
     return (
         <header className="px-4 lg:px-6 h-14 flex">
             <svg
@@ -32,16 +20,15 @@ export function Navbar() {
                     fill="none"
                 />
             </svg>
-            
 
             <nav className="ml-auto flex gap-4 sm:gap-6 p-4 text-lg font-medium">
-                <a href="#projects" className="hover:underline underline-offset-4">
+                <a href="projects" className="hover:underline underline-offset-4">
                     Projects
                 </a>
-                <a href="#resume" className="hover:underline underline-offset-4">
+                <a href="resume" className="hover:underline underline-offset-4">
                     Resume
                 </a>
-                <a href="#about" className="hover:underline underline-offset-4">
+                <a href="about" className="hover:underline underline-offset-4">
                     About
                 </a>
             </nav>
