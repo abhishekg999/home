@@ -91,7 +91,9 @@ body {
     stroke: #67d78e;
     stroke-width: 25;
     stroke-dasharray: var(--bulba-svg-length);
-    animation: draw 3.5s normal forwards cubic-bezier(.66,.97,.68,1.02);
+    animation: draw 3.5s normal forwards cubic-bezier(0.66, 0.97, 0.68, 1.02);
+    -webkit-animation: draw 3.5s normal forwards
+        cubic-bezier(0.66, 0.97, 0.68, 1.02);
 }
 
 .animated-svg:hover {
@@ -101,23 +103,45 @@ body {
 
 @keyframes draw {
     0% {
-      stroke-dashoffset: var(--bulba-svg-length);
+        stroke-dashoffset: var(--bulba-svg-length);
     }
     70% {
-      scale: 1;
+        scale: 1;
     }
-    
+
     80% {
-      stroke-dashoffset: 0;
-      scale: 1.2;
+        stroke-dashoffset: 0;
+        scale: 1.2;
     }
     90% {
-      stroke-dashoffset: 0;
-      scale: 1;
+        stroke-dashoffset: 0;
+        scale: 1;
     }
     100% {
-      stroke-dashoffset: 0;
-      scale: 1;
+        stroke-dashoffset: 0;
+        scale: 1;
     }
-  }
-  
+}
+
+@-webkit-keyframes draw {
+    0% {
+        stroke-dashoffset: var(--bulba-svg-length);
+    }
+    70% {
+        scale: 1;
+    }
+
+    80% {
+        stroke-dashoffset: 0;
+        scale: 1.2;
+    }
+    90% {
+        stroke-dashoffset: 0;
+        scale: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        scale: 1;
+    }
+}
+
