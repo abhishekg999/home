@@ -2,7 +2,7 @@ import { routerPage } from "../signals/RouterPageSignal";
 
 export function Navbar() {
     return (
-        <header className="px-4 lg:px-6 h-14 flex py-2">
+        <header className="px-4 lg:px-6 h-14 flex py-2 fixed-top">
 
             <svg
 
@@ -12,7 +12,7 @@ export function Navbar() {
                 fill-rule="nonzero"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                className={`width-14 h-14 sm:w-16 sm:h-16 animated-svg ${routerPage.value === 'Home' ? 'animated-svg-draw' : 'animate-bounce'}`}
+                className={`width-14 h-14 sm:w-16 sm:h-16 animated-svg ${routerPage.value !== 'Error' ? 'animated-svg-draw' : 'animate-bounce'}`}
                 onClick={() => {
                     window.location.href = "/";
                 }}
@@ -22,7 +22,7 @@ export function Navbar() {
                 />
             </svg>
 
-            <nav className="ml-auto flex gap-4 sm:gap-6 p-4 text-lg font-medium">
+            <nav className={`ml-auto flex gap-4 sm:gap-6 p-4 text-lg font-medium ${routerPage.value !== 'Error' ? 'animation-text-fade-in' : ''}`}>
                 <a
                     href="projects"
                     className="hover:underline underline-offset-4"

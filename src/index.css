@@ -10,7 +10,7 @@
     line-height: 1.5;
     font-weight: 400;
 
-    color-scheme: light dark;
+    color-scheme: dark;
     color: rgba(255, 255, 255, 0.87);
 
     background: rgb(36, 36, 36);
@@ -69,6 +69,8 @@ body {
     background-color: #bbbbbb;
 }
 
+
+/* START Popup modal on the bottom left of the page */
 .clipboard-popup {
     animation: popup ease 0.2s;
     background-color: rgb(38, 42, 48);
@@ -85,7 +87,10 @@ body {
         border-color: #424244;
     }
 }
+/* Popup modal END */
 
+
+/* START SVG animation for the Bulba logo */
 .animated-svg {
     fill: none;
     stroke: #67d78e;
@@ -126,3 +131,26 @@ body {
         scale: 1;
     }
 }
+/* SVG animation END */
+
+/* START animation for fading in text on the screen from the bottom */
+.animation-text-fade-in {
+    animation: fadeIn ease 1.2s;
+    -webkit-animation: fadeIn ease 1.2s;
+    -moz-animation: fadeIn ease 1.2s;
+    -o-animation: fadeIn ease 1.2s;
+    -ms-animation: fadeIn ease 1.2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* animation for fading in text END */

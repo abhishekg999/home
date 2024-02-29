@@ -14,7 +14,7 @@ export function Home(_: any) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setOpen(false);
-        }, 1500);
+        }, 2250);
         return () => clearTimeout(timer);
     });
 
@@ -27,7 +27,7 @@ export function Home(_: any) {
                             Hi, I'm Abhishek
                         </h1>
 
-                        <div className="text-gray-300 px-6 pt-2">
+                        <div className="text-gray-300 px-4 pt-2">
                             I'm a Software Developer and Computer Science
                             student at UC San Diego. In my free time, I am a
                             Capture the Flag (CTF) player specializing in web
@@ -57,7 +57,7 @@ export function Home(_: any) {
                             <p> Copied to Clipboard </p>
                             <CloseIcon
                                 onClick={() => setOpen(false)}
-                                className="cursor-pointer hover:"
+                                className="cursor-pointer"
                             ></CloseIcon>
                         </div>
                     ) : null}
