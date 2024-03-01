@@ -23,17 +23,14 @@ export function Navbar() {
             </svg>
 
             <nav className={`ml-auto flex gap-4 sm:gap-6 p-4 text-lg font-medium ${routerPage.value !== 'Error' ? 'animation-text-fade-in' : ''}`}>
-                <a
-                    href="projects"
-                    className="hover:underline underline-offset-4"
-                >
+                <a href="projects" className="hover:underline underline-offset-4">
                     Projects
                 </a>
                 <a href="resume" className="hover:underline underline-offset-4">
                     Resume
                 </a>
-                <a href="about" className="hover:underline underline-offset-4">
-                    About
+                <a href="https://blog.ahh.bet/" className="hover:underline underline-offset-4">
+                    Blog
                 </a>
             </nav>
         </header>
