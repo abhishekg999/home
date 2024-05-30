@@ -39,10 +39,11 @@ export function Home(_: any) {
                         alt="placeholder"
                     ></div>
                 </div>
-
+            </section>
                 <hr className="w-5/6 max-w-[480px] my-12"></hr>
-
-                {/* Last thing of main page will be this */}
+            
+            {/* Last thing of main page will be this */}
+            <section className="w-full pb-8 flex flex-col justify-center items-center container max-w-[600px] px-4">
                 <div className="mt-6">
                     <a
                         className="p-2 px-6 border-[1px] border-white rounded-md hover:bg-white hover:text-black transition-colors duration-300 ease-in-out"

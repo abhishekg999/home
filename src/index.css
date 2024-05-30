@@ -72,10 +72,11 @@ body {
 
 /* START Popup modal on the bottom left of the page */
 .clipboard-popup {
-    animation: popup ease 0.2s;
+    animation: popup forwards 0.2s;
     background-color: rgb(38, 42, 48);
     border-width: 2px;
     border-color: #424244;
+    transition: all 0.3s ease;
 }
 @keyframes popup {
     0% {
