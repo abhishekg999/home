@@ -26,7 +26,7 @@ export function Navbar() {
                 <a href="projects" className="hover:underline underline-offset-4">
                     Projects
                 </a>
-                <a href="resume" className="hover:underline underline-offset-4">
+                <a href="/Resume_AbhishekGovindarasu.pdf" className="hover:underline underline-offset-4" target="_blank" rel="noopener noreferrer">
                     Resume
                 </a>
                 <a href="https://blog.ahh.bet/" className="hover:underline underline-offset-4">
