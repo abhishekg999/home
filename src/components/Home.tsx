@@ -1,22 +1,11 @@
-import CloseIcon from "@mui/icons-material/Close";
-import { useEffect, useState } from "preact/hooks";
 import { routerPage } from "../signals/RouterPageSignal";
 
 export function Home(_: any) {
     routerPage.value = "Home";
 
-    const [open, setOpen] = useState(false);
     const copyEmailToClipboard = () => {
         navigator.clipboard.writeText("abhishekgovindarasu@gmail.com");
-        setOpen(true);
     };
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setOpen(false);
-        }, 2250);
-        return () => clearTimeout(timer);
-    });
 
     return (
         <main className="flex flex-col justify-center items-center">
@@ -52,16 +41,6 @@ export function Home(_: any) {
                     >
                         Contact Me
                     </a>
-
-                    {open ? (
-                        <div className="text-sm flex justify-between fixed bottom-0 bg-gray left-0 m-4 px-4 py-2 min-w-[280px] max-w-[320px] border-2 rounded-lg clipboard-popup">
-                            <p> Copied to Clipboard </p>
-                            <CloseIcon
-                                onClick={() => setOpen(false)}
-                                className="cursor-pointer"
-                            ></CloseIcon>
-                        </div>
-                    ) : null}
                 </div>
             </section>
         </main>
