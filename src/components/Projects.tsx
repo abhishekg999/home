@@ -2,22 +2,44 @@ import { Github, ExternalLink } from 'lucide-preact';
 
 const projects = [
     {
-        title: 'Reflect',
-        description: 'A simple site for reflecting HTML. Useful for hosting public HTML quickly, primarily used (personally) for web CTF exploitation.',
-        github: 'https://github.com/abhishekg999/reflect',
-        liveDemo: 'https://reflect.ahh.bet',
-        favicon: 'https://reflect.ahh.bet/favicon.ico',
-        background: 'bg-gradient-to-r from-purple-700 via-pink-700 to-red-700',
-    },
-    {
         title: 'Secret',
         description: (
-            <span>A one-time secret sharing service, powered by Cloudflare Workers and D1, built with React, Hono, and Drizzle-ORM.</span>
+            <span>A one-time secret sharing service, powered by Cloudflare Workers and D1, built with <strong>React</strong>, <strong>Hono</strong>, and <strong>Drizzle-ORM</strong>.</span>
         ),
         github: 'https://github.com/abhishekg999/secret',
         liveDemo: 'https://secret.ahh.bet',
         favicon: 'https://secret.ahh.bet/favicon.ico',
-        background: 'bg-gradient-to-r from-green-700 via-blue-700 to-indigo-700',
+        background: 'bg-gradient-to-r',
+    },
+    {
+        title: 'What Editor',
+        description: (
+            <span>LocalStorage first based note app, powered by Quill.js, built with <strong>Next.js</strong>. Cloud storage and authorization implemented with <strong>SupaBase Postgres</strong> and <strong>Lucia Auth</strong>.</span>
+        ),
+        github: 'https://github.com/abhishekg999/what',
+        liveDemo: 'https://what.ahh.bet',
+        favicon: 'https://what.ahh.bet/favicon.ico',
+        background: 'bg-gradient-to-r',
+    },
+    {
+        title: 'Touchdown',
+        description: (
+            <span>Touchdown! Connect NFL players by their mutual teammates. New players to connect every day! Can you connect them in the fewest number of players?</span>
+        ),
+        github: 'https://github.com/abhishekg999/Touchdown',
+        liveDemo: 'https://touchdown.life/',
+        favicon: 'https://touchdown.life/favicon.ico',
+        background: 'bg-gradient-to-r',
+    },
+    {
+        title: 'Reflect',
+        description: (
+            <span>A simple site for reflecting HTML. Useful for hosting public HTML quickly, primarily used (personally) for web CTF exploitation.</span>
+        ),
+        github: 'https://github.com/abhishekg999/reflect',
+        liveDemo: 'https://reflect.ahh.bet',
+        favicon: 'https://reflect.ahh.bet/favicon.ico',
+        background: 'bg-gradient-to-r',
     },
 ];
 
@@ -34,7 +56,7 @@ export function Projects() {
                             <img
                                 src={project.favicon}
                                 alt={`${project.title} favicon`}
-                                className="w-10 h-10 rounded-full mr-4"
+                                className="w-10 h-10 rounded-sm mr-4"
                             />
                             <h2 className="text-2xl font-semibold">{project.title}</h2>
                         </div>
