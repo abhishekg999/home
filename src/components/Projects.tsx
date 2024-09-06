@@ -60,7 +60,7 @@ export const Projects = () => {
   const projects = [
     {
       title: 'What Notepad',
-      description: 'Minimal and modern notepad built with MDXEditor. Local-first, cloud sync with login powered Neon.',
+      description: 'Minimal and modern notepad built with MDXEditor. Local-first. Cloud sync with login powered by Neon.',
       github: 'https://github.com/abhishekg999/what',
       liveDemo: 'https://what.ahh.bet',
       background: '/what-preview.png',
@@ -76,7 +76,7 @@ export const Projects = () => {
     },
     {
       title: 'Secret',
-      description: 'Secure one-time link sharing service. AES-256 Encryption on the client keeping user privacy in mind. Data deleted immediately when accessed.',
+      description: 'Secure one-time link sharing service. AES-256 Encryption on the client ensuring user privacy. Data deleted immediately when accessed.',
       github: 'https://github.com/abhishekg999/secret',
       liveDemo: 'https://secret.ahh.bet',
       background: '/secret-preview.png',
