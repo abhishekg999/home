@@ -22,7 +22,7 @@ export function Navbar() {
                 />
             </svg>
 
-            <nav className={`ml-auto flex gap-4 sm:gap-6 p-4 text-lg font-medium ${routerPage.value !== 'Error' ? 'animation-text-fade-in' : ''}`}>
+            <nav className={`ml-auto flex gap-4 sm:gap-6 p-4 text-lg font-medium ${routerPage.value !== 'Error' ? 'animation-text-fade-in-x' : ''}`}>
                 <a href="projects" className="hover:underline underline-offset-4">
                     Projects
                 </a>

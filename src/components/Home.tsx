@@ -29,7 +29,7 @@ export function Home() {
                 </div>
             </section>
 
-            <section className="flex justify-center space-x-8 py-10">
+            <section className="flex justify-center space-x-8 py-10 ">
                 <a href="//github.com/abhishekg999" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500"><GithubIcon size={ICON_SIZE} /></a>
                 <a href="//linkedin.com/in/abhishekgovindarasu" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500"><LinkedinIcon size={ICON_SIZE} /></a>
                 <a href="mailto:abhishekgovindarasu@gmail.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500"><MailIcon size={ICON_SIZE} /></a>

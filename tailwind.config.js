@@ -15,6 +15,12 @@ export default {
                 "theme-main-9": "#A7C2CC", // light blue
                 "theme-main-10": "#EBF2FA", // alice blue
             },
+            dropShadow: {
+                glow: [
+                    "0 0px 20px rgba(255,255, 255, 0.35)",
+                    "0 0px 65px rgba(255, 255,255, 0.2)"
+                ]
+            }
         },
     },
     variants: {

@@ -16,8 +16,8 @@
     background: rgb(36, 36, 36);
     background: radial-gradient(
         circle,
-        rgba(36, 36, 36, 1) 30%,
-        rgba(14, 38, 18, 1) 89%
+        rgba(36, 36, 36, 1) 0%,
+        rgba(14, 38, 18, 1) 79%
     );
     background-attachment: fixed;
     opacity: 1;
@@ -134,16 +134,16 @@ body {
 }
 /* SVG animation END */
 
-/* START animation for fading in text on the screen from the bottom */
-.animation-text-fade-in {
-    animation: fadeIn ease 1.2s;
-    -webkit-animation: fadeIn ease 1.2s;
-    -moz-animation: fadeIn ease 1.2s;
-    -o-animation: fadeIn ease 1.2s;
-    -ms-animation: fadeIn ease 1.2s;
+/* START animation for fading in text on the screen from the left */
+.animation-text-fade-in-x {
+    animation: fadeInX ease 1.2s;
+    -webkit-animation: fadeInX ease 1.2s;
+    -moz-animation: fadeInX ease 1.2s;
+    -o-animation: fadeInX ease 1.2s;
+    -ms-animation: fadeInX ease 1.2s;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInX {
     0% {
         opacity: 0;
         transform: translateX(-4rem);
@@ -153,5 +153,4 @@ body {
         transform: translateX(0);
     }
 }
-
 /* animation for fading in text END */
