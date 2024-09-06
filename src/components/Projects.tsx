@@ -13,8 +13,8 @@ const ProjectCard = ({ title, description, github, liveDemo, background, tags }:
   <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01]">
     <div className="relative h-36 md:h-44 overflow-hidden">
       <img src={background} alt={title} className="w-full" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#161b3a] opacity-40"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#18522c15]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1e2c2f97] opacity-40"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#08080888]"></div>
     </div>
     <div className="p-4">
       <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">{title}</h2>
@@ -97,8 +97,8 @@ const FutureProjectCard = () => (
 export const Projects = () => {
   const projects = [
     {
-      title: 'What Editor',
-      description: 'Notepad powered by MDXEditor. Local storage by default, automatic cloud sync with login.',
+      title: 'What Notepad',
+      description: 'Notepad powered by MDXEditor. Local storage default, automatic cloud sync with login.',
       github: 'https://github.com/abhishekg999/what',
       liveDemo: 'https://what.ahh.bet',
       background: '/what-preview.png',
