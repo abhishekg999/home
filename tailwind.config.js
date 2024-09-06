@@ -20,7 +20,20 @@ export default {
                     "0 0px 20px rgba(255,255, 255, 0.35)",
                     "0 0px 65px rgba(255, 255,255, 0.2)"
                 ]
-            }
+            },
+            animation: {
+                "text-reveal": "text-reveal .5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s",
+            },
+            keyframes: {
+                "text-reveal": {
+                    "0%": {
+                        transform: "translate(0, 150%)",
+                    },
+                    "100%": {
+                        transform: "translate(0, 0)",
+                    },
+                },
+            },
         },
     },
     variants: {

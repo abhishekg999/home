@@ -8,7 +8,18 @@ import { Router, Route } from "preact-router";
 export function App() {
     return (
         <>
-            <div className="flex flex-col min-h-[100dvh]">
+            <div className="flex flex-col min-h-[100dvh] relative">
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a2e1a] z-10 opacity-0"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-transparent to-[#1a2e1a] z-10 opacity-0"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1a2e1a] z-10 opacity-20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1a2e1a] z-10 opacity-20"></div>
+                    <img
+                        src="/background.jpg"
+                        alt="Abstract background"
+                        className="w-full h-full object-cover object-right-top opacity-40"
+                    />
+                </div>
                 <Navbar />
                 <Router>
                     <Route path="/" component={Home} />

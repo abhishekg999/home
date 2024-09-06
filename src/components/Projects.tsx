@@ -1,4 +1,5 @@
 import { Github, ExternalLink, Lightbulb } from 'lucide-preact';
+import { routerPage } from '../signals/RouterPageSignal';
 
 type Project = {
   title: string;
@@ -10,9 +11,12 @@ type Project = {
 }
 
 const ProjectCard = ({ title, description, github, liveDemo, background, tags }: Project) => (
-  <div className="flex flex-col bg-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] p-4">
-    <div className="relative flex-1 overflow-hidden rounded-3xl">
-      <img src={background} alt={title} className="w-full rounded-3xl" />
+  <div className="flex flex-col bg-gray-800 rounded-b-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] relative">
+    {/* Top-left corner border */}
+    <div className="absolute top-0 left-0 z-[200] border-t-2 border-l-2 border-[#8ed495] w-8 md:w-16 h-8 md:h-16"></div>
+
+    <div className="relative flex-1 overflow-hidden rounded-b-xl">
+      <img src={background} alt={title} className="w-full rounded-b-xl" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1e2c2f97] opacity-40"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#08080888]"></div>
     </div>
@@ -26,7 +30,7 @@ const ProjectCard = ({ title, description, github, liveDemo, background, tags }:
           </span>
         ))}
       </div>
-      <div className="flex gap-3">
+      <div className="flex gap-3 text-sm md:text-base">
         <a
           href={github}
           target="_blank"
@@ -52,6 +56,7 @@ const ProjectCard = ({ title, description, github, liveDemo, background, tags }:
 
 
 export const Projects = () => {
+  routerPage.value = "Projects";
   const projects = [
     {
       title: 'What Notepad',
@@ -88,7 +93,7 @@ export const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white p-8">
+    <div className="min-h-screen text-white p-8 z-50">
 
       <div className="container flex flex-col items-center justify-center space-y-4 px-4 pb-8 mx-auto">
         <div className="text-center">
