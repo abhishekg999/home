@@ -75,7 +75,7 @@ export const Projects = () => {
     },
     {
       title: 'Secret',
-      description: 'Secure one-time link sharing service. AES-256 Encryption on the client keeping user privacy in mind. Data deleted immediately when accessed.',
+      description: 'Secure one-time link sharing service with AES-256 client-side encryption, ensuring user privacy. Data is deleted instantly upon access.',
       github: 'https://github.com/abhishekg999/secret',
       liveDemo: 'https://secret.ahh.bet',
       background: '/secret-preview.png',
