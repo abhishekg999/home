@@ -60,7 +60,7 @@ export const Projects = () => {
     {
       title: 'What Notepad',
       description: 'Minimal and modern notepad built with MDXEditor. Local-first. Cloud sync with login powered by Neon.',
-      github: 'https://github.com/abhishekg999/what',
+      github: 'https://github.com/abhishekg999/whatv2',
       liveDemo: 'https://what.ahh.bet',
       background: '/what-preview.png',
       tags: ['React', 'Next.js', 'PostgreSQL', 'Drizzle ORM', 'Typescript', 'Github OAuth'],
