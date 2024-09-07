@@ -12,20 +12,19 @@ type Project = {
 
 const ProjectCard = ({ title, description, github, liveDemo, background, tags }: Project) => (
   <div className="flex flex-col bg-gray-800 rounded-b-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] relative">
-    {/* Top-left corner border */}
-    <div className="absolute top-0 left-0 z-[200] border-t-2 border-l-2 border-[#8ed495] w-8 md:w-16 h-8 md:h-16"></div>
+    <div className="absolute top-0 left-0 z-[200] border-t-2 border-l-2 border-white-700 w-8 md:w-16 h-8 md:h-16"></div>
 
-    <div className="relative flex-1 overflow-hidden rounded-b-xl">
-      <img src={background} alt={title} className="w-full rounded-b-xl" />
+    <div className="relative flex-1 overflow-hidden rounded-b-sm">
+      <img src={background} alt={title} className="w-full rounded-b-sm" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1e2c2f97] opacity-40"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#08080888]"></div>
     </div>
-    <div className="p-4">
-      <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">{title}</h2>
-      <p className="text-sm lg:text-base text-gray-200 mb-3">{description}</p>
+    <div className="px-4 py-2 pb-4">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{title}</h2>
+      <p className="text-xs sm:text-sm lg:text-base text-gray-200 mb-3">{description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag, index) => (
-          <span key={index} className="px-3 py-1 bg-blue-700 text-white rounded-full text-xs lg:text-sm transition-colors duration-300 hover:bg-green-700">
+          <span key={index} className="px-3 py-1 bg-blue-700 text-white rounded-full text-[0.625rem]/[0.875rem] sm:text-xs xl:text-sm transition-colors duration-300 hover:bg-green-700">
             {tag}
           </span>
         ))}
@@ -64,7 +63,7 @@ export const Projects = () => {
       github: 'https://github.com/abhishekg999/what',
       liveDemo: 'https://what.ahh.bet',
       background: '/what-preview.png',
-      tags: ['React', 'Next.js', 'Neon Postgres', 'Lucia Auth', 'Typescript', 'Github OAuth'],
+      tags: ['React', 'Next.js', 'PostgreSQL', 'Drizzle ORM', 'Typescript', 'Github OAuth'],
     },
     {
       title: "Demiya Redesign",
@@ -76,7 +75,7 @@ export const Projects = () => {
     },
     {
       title: 'Secret',
-      description: 'Secure one-time link sharing service. AES-256 Encryption on the client ensuring user privacy. Data deleted immediately when accessed.',
+      description: 'Secure one-time link sharing service. AES-256 Encryption on the client keeping user privacy in mind. Data deleted immediately when accessed.',
       github: 'https://github.com/abhishekg999/secret',
       liveDemo: 'https://secret.ahh.bet',
       background: '/secret-preview.png',
@@ -104,7 +103,7 @@ export const Projects = () => {
       </div>
 
 
-      <div className="grid grid-cols-1 gap-8 lg:gap-12 p-2 md:p-6 lg:p-10 xl:p-14">
+      <div className="grid grid-cols-1 gap-8 lg:gap-12 md:p-6 lg:p-10 xl:p-14">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
