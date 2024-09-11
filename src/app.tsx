@@ -15,7 +15,7 @@ export function App() {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1a2e1a] z-10 opacity-20"></div>
                     <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1a2e1a] z-10 opacity-20"></div>
                     <img
-                        src="/background.jpg"
+                        src="/min/background-min.jpg"
                         alt="Abstract background"
                         className="w-full h-full object-cover object-right-top opacity-40"
                     />

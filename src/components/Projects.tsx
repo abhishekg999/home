@@ -12,12 +12,12 @@ type Project = {
 
 const ProjectCard = ({ title, description, github, liveDemo, background, tags }: Project) => (
   <div className="flex flex-col bg-gray-800 rounded-b-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] relative">
-    <div className="absolute top-0 left-0 z-[200] border-t-2 border-l-2 border-white-700 w-8 md:w-16 h-8 md:h-16"></div>
+    <div className="absolute top-0 left-0 z-[200] border-t-2 border-l-2 border-slate-500 w-8 md:w-16 h-8 md:h-16"></div>
 
     <div className="relative flex-1 overflow-hidden rounded-b-sm">
       <img src={background} alt={title} className="w-full rounded-b-sm" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1e2c2f97] opacity-40"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#08080888]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1e2c2f97] opacity-100"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#08080888]"></div> */}
     </div>
     <div className="px-4 py-2 pb-4">
       <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{title}</h2>
@@ -62,7 +62,7 @@ export const Projects = () => {
       description: 'Minimal and modern notepad built with MDXEditor. Local-first. Cloud sync with login powered by Neon.',
       github: 'https://github.com/abhishekg999/whatv2',
       liveDemo: 'https://what.ahh.bet',
-      background: '/what-preview.png',
+      background: '/min/what-preview-min.png',
       tags: ['React', 'Next.js', 'PostgreSQL', 'Drizzle ORM', 'Typescript', 'Github OAuth'],
     },
     {
@@ -70,7 +70,7 @@ export const Projects = () => {
       description: "Redesign of the Demiya website, a local restaurant in the Bay Area. Built with performance, user experience, and SEO in mind.",
       github: 'https://github.com/abhishekg999/demiya-redesign',
       liveDemo: 'https://demiya-redesign.vercel.app/',
-      background: '/demiya-redesign-preview.png',
+      background: '/min/demiya-redesign-preview-min.png',
       tags: ['React', 'Next.js', 'Tailwind CSS', 'Google Maps API'],
     },
     {
@@ -78,7 +78,7 @@ export const Projects = () => {
       description: 'Secure one-time link sharing service with AES-256 client-side encryption, ensuring user privacy. Data is deleted instantly upon access.',
       github: 'https://github.com/abhishekg999/secret',
       liveDemo: 'https://secret.ahh.bet',
-      background: '/secret-preview.png',
+      background: '/min/secret-preview-min.png',
       tags: ['Cloudflare Workers', 'Cloudflare D1', 'Hono', 'Drizzle ORM', 'Preact', 'Typescript'],
     },
     {
@@ -86,7 +86,7 @@ export const Projects = () => {
       description: 'Daily webgame where you connect NFL players by their mutual teammates. 25K+ users testing their NFL knowledge.',
       github: 'https://github.com/abhishekg999/Touchdown',
       liveDemo: 'https://touchdown.life/',
-      background: '/touchdown-preview.png?',
+      background: '/min/touchdown-preview-min.png?',
       tags: ['HTML', 'CSS', 'Javascript'],
     },
   ];
