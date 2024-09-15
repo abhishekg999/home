@@ -109,7 +109,7 @@ export const Projects = () => {
         ))}
       </div>
 
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center pt-8">
         <div className="flex items-center justify-items-center gap-4">
           <span>More to come!</span>
           <Lightbulb size={24} className="inline-block" />
