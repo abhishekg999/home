@@ -1,5 +1,5 @@
-import { Github, ExternalLink, Lightbulb } from 'lucide-preact';
-import { routerPage } from '../signals/RouterPageSignal';
+import { Github, ExternalLink, Lightbulb } from "lucide-preact";
+import { routerPage } from "../signals/RouterPageSignal";
 
 type Project = {
   title: string;
@@ -8,9 +8,16 @@ type Project = {
   liveDemo: string;
   background: string;
   tags: string[];
-}
+};
 
-const ProjectCard = ({ title, description, github, liveDemo, background, tags }: Project) => (
+const ProjectCard = ({
+  title,
+  description,
+  github,
+  liveDemo,
+  background,
+  tags,
+}: Project) => (
   <div className="flex flex-col bg-gray-800 rounded-b-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] relative">
     <div className="absolute top-0 left-0 z-[200] border-t-2 border-l-2 border-slate-500 w-8 md:w-16 h-8 md:h-16"></div>
 
@@ -20,11 +27,18 @@ const ProjectCard = ({ title, description, github, liveDemo, background, tags }:
       {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#08080888]"></div> */}
     </div>
     <div className="px-4 py-2 pb-4">
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{title}</h2>
-      <p className="text-xs sm:text-sm lg:text-base text-gray-200 mb-3">{description}</p>
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
+        {title}
+      </h2>
+      <p className="text-xs sm:text-sm lg:text-base text-gray-200 mb-3">
+        {description}
+      </p>
       <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag, index) => (
-          <span key={index} className="px-3 py-1 bg-blue-700 text-white rounded-full text-[0.625rem]/[0.875rem] sm:text-xs xl:text-sm transition-colors duration-300 hover:bg-green-700">
+          <span
+            key={index}
+            className="px-3 py-1 bg-blue-700 text-white rounded-full text-[0.625rem]/[0.875rem] sm:text-xs xl:text-sm transition-colors duration-300 hover:bg-green-700"
+          >
             {tag}
           </span>
         ))}
@@ -53,47 +67,63 @@ const ProjectCard = ({ title, description, github, liveDemo, background, tags }:
   </div>
 );
 
-
 export const Projects = () => {
   routerPage.value = "Projects";
   const projects = [
     {
-      title: 'What Notepad',
-      description: 'Minimal and modern notepad built with MDXEditor. Local-first. Cloud sync with login powered by Neon.',
-      github: 'https://github.com/abhishekg999/whatv2',
-      liveDemo: 'https://what.ahh.bet',
-      background: '/min/what-preview-min.png',
-      tags: ['React', 'Next.js', 'PostgreSQL', 'Drizzle ORM', 'Typescript', 'Github OAuth'],
+      title: "What Notepad",
+      description:
+        "Minimal and modern notepad built with MDXEditor. Local-first. Cloud sync with login powered by Neon.",
+      github: "https://github.com/abhishekg999/whatv2",
+      liveDemo: "https://what.ahh.bet",
+      background: "/min/what-preview-min.png",
+      tags: [
+        "React",
+        "Next.js",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Typescript",
+        "Github OAuth",
+      ],
     },
     {
       title: "Demiya Redesign",
-      description: "Redesign of the Demiya website, a local restaurant in the Bay Area. Built with performance, user experience, and SEO in mind.",
-      github: 'https://github.com/abhishekg999/demiya-redesign',
-      liveDemo: 'https://demiya-redesign.vercel.app/',
-      background: '/min/demiya-redesign-preview-min.png',
-      tags: ['React', 'Next.js', 'Tailwind CSS', 'Google Maps API'],
+      description:
+        "Redesign of the Demiya website, a local restaurant in the Bay Area. Built with performance, user experience, and SEO in mind.",
+      github: "https://github.com/abhishekg999/demiya-redesign",
+      liveDemo: "https://demiya-redesign.vercel.app/",
+      background: "/min/demiya-redesign-preview-min.png",
+      tags: ["React", "Next.js", "Tailwind CSS", "Google Maps API"],
     },
     {
-      title: 'Secret',
-      description: 'Secure one-time link sharing service with AES-256 client-side encryption, ensuring user privacy. Data is deleted instantly upon access.',
-      github: 'https://github.com/abhishekg999/secret',
-      liveDemo: 'https://secret.ahh.bet',
-      background: '/min/secret-preview-min.png',
-      tags: ['Cloudflare Workers', 'Cloudflare D1', 'Hono', 'Drizzle ORM', 'Preact', 'Typescript'],
+      title: "Secret",
+      description:
+        "Secure one-time link sharing service with AES-256 client-side encryption, ensuring user privacy. Data is deleted instantly upon access.",
+      github: "https://github.com/abhishekg999/secret",
+      liveDemo: "https://secret.ahh.bet",
+      background: "/min/secret-preview-min.png",
+      tags: [
+        "Cloudflare Workers",
+        "Cloudflare D1",
+        "Hono",
+        "Drizzle ORM",
+        "Preact",
+        "Typescript",
+      ],
     },
     {
-      title: 'Touchdown',
-      description: 'Daily webgame where you connect NFL players by their mutual teammates. 25K+ users testing their NFL knowledge.',
-      github: 'https://github.com/abhishekg999/Touchdown',
-      liveDemo: 'https://touchdown.life/',
-      background: '/min/touchdown-preview-min.png?',
-      tags: ['HTML', 'CSS', 'Javascript'],
+      title: "Touchdown",
+      description:
+        "Daily webgame where you connect NFL players by their mutual teammates. 25K+ users testing their NFL knowledge.",
+      github: "https://github.com/abhishekg999/Touchdown",
+      liveDemo: "https://touchdown.life/",
+      background: "/min/touchdown-preview-min.png?",
+      tags: ["HTML", "CSS", "Javascript"],
     },
   ];
 
   return (
     <div className="min-h-screen text-white p-8 z-50">
-
       <div className="container flex flex-col items-center justify-center space-y-4 px-4 pb-8 mx-auto">
         <div className="text-center">
           <h1 className="text-5xl font-bold tracking-tighter pt-6 text-white">
@@ -101,7 +131,6 @@ export const Projects = () => {
           </h1>
         </div>
       </div>
-
 
       <div className="grid grid-cols-1 gap-8 lg:gap-12 md:p-6 lg:p-10 xl:p-14">
         {projects.map((project, index) => (
