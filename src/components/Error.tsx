@@ -1,7 +1,6 @@
-import { RouterProps } from "preact-router";
 import { routerPage } from "../signals/RouterPageSignal";
-
-export function Error({ url }: RouterProps) {
+import type { RoutableProps } from "preact-iso";
+export function Error({ path }: RoutableProps) {
   routerPage.value = "Error";
 
   return (
@@ -11,7 +10,7 @@ export function Error({ url }: RouterProps) {
         cause this site is still in development, check back later!
       </p>
       <br />
-      <pre>{url}</pre>
+      <pre>{path}</pre>
     </section>
   );
 }
