@@ -3,7 +3,7 @@ import { Footer } from "./components/Footer";
 import { Home } from "./components/Home";
 import { Error } from "./components/Error";
 import { Projects } from "./components/Projects";
-import { Router, Route } from "preact-router";
+import { LocationProvider, ErrorBoundary, Router, Route } from "preact-iso";
 
 export function App() {
   return (
@@ -20,14 +20,18 @@ export function App() {
             className="w-full h-full object-cover object-right-top opacity-40"
           />
         </div>
-        <Navbar />
-        <Router>
-          <Route path="/" component={Home} />
-          <Route path="/projects" component={Projects} />
-          <Route default component={Error} />
-        </Router>
-        <Footer />
-      </div>
+        <LocationProvider>
+          <ErrorBoundary>
+            <Navbar />
+            <Router>
+              <Route path="/" component={Home} />
+              <Route path="/projects" component={Projects} />
+              <Route default component={Error} />
+            </Router>
+            <Footer />
+          </ErrorBoundary>
+        </LocationProvider>
+      </div >
     </>
   );
 }
