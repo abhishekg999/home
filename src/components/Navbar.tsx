@@ -1,4 +1,4 @@
-import { Link } from "preact-router";
+import { Link } from "../utils/Link";
 import { routerPage } from "../signals/RouterPageSignal";
 
 export function Navbar() {
