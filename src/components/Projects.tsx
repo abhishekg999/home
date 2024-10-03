@@ -74,7 +74,7 @@ export const Projects = () => {
         "Minimal and modern notepad built with MDXEditor. Local-first. Cloud sync with login powered by Neon.",
       github: "https://github.com/abhishekg999/whatv2",
       liveDemo: "https://what.ahh.bet",
-      background: "/min/what-preview-min.png",
+      background: "/min/what-preview-min.jpg",
       tags: [
         "React",
         "Next.js",
@@ -90,7 +90,7 @@ export const Projects = () => {
         "Redesign of the Demiya website, a local restaurant in the Bay Area. Built with performance, user experience, and SEO in mind.",
       github: "https://github.com/abhishekg999/demiya-redesign",
       liveDemo: "https://demiya-redesign.vercel.app/",
-      background: "/min/demiya-redesign-preview-min.png",
+      background: "/min/demiya-redesign-preview-min.jpg",
       tags: ["React", "Next.js", "Tailwind CSS", "Google Maps API"],
     },
     {
@@ -99,7 +99,7 @@ export const Projects = () => {
         "Secure one-time link sharing service with AES-256 client-side encryption, ensuring user privacy. Data is deleted instantly upon access.",
       github: "https://github.com/abhishekg999/secret",
       liveDemo: "https://secret.ahh.bet",
-      background: "/min/secret-preview-min.png",
+      background: "/min/secret-preview-min.jpg",
       tags: [
         "Cloudflare Workers",
         "Cloudflare D1",
@@ -115,7 +115,7 @@ export const Projects = () => {
         "Daily webgame where you connect NFL players by their mutual teammates. 25K+ users testing their NFL knowledge.",
       github: "https://github.com/abhishekg999/Touchdown",
       liveDemo: "https://touchdown.life/",
-      background: "/min/touchdown-preview-min.png?",
+      background: "/min/touchdown-preview-min.jpg?",
       tags: ["HTML", "CSS", "Javascript"],
     },
   ];
