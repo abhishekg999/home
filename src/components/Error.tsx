@@ -1,7 +1,5 @@
-import { routerPage } from "../signals/RouterPageSignal";
 import type { RoutableProps } from "preact-iso";
 export function Error({ path }: RoutableProps) {
-  routerPage.value = "Error";
 
   return (
     <section class="error w-full pt-16 pb-8 flex flex-col justify-center items-center container max-w-[600px] p-4 my-4 m-[0_auto] z-20">

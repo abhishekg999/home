@@ -1,5 +1,4 @@
 import { Github, ExternalLink, Lightbulb } from "lucide-preact";
-import { routerPage } from "../signals/RouterPageSignal";
 
 type Project = {
   title: string;
@@ -68,7 +67,6 @@ const ProjectCard = ({
 );
 
 export const Projects = () => {
-  routerPage.value = "Projects";
   const projects = [
     {
       title: "What Notepad",

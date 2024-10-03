@@ -1,11 +1,8 @@
-import { routerPage } from "../signals/RouterPageSignal";
 import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-preact";
 
 const ICON_SIZE = 34;
 
 export function Home() {
-  routerPage.value = "Home";
-
   return (
     <>
       <main className="flex-grow flex items-center justify-center p-4 relative z-20">

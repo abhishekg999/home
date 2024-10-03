@@ -3,11 +3,11 @@ import { App } from "./app.tsx";
 import "./index.css";
 
 if (typeof window !== 'undefined') {
-    // @ts-expect-error
-    hydrate(<App />, document.getElementById('app'));
+    hydrate(<App />, document.getElementById('app')!);
 }
 
 export async function prerender(data: any) {
+    console.log(data)
     const { url } = data;
     const { html, links } = await ssr(<App {...data} />);
 
@@ -20,10 +20,12 @@ export async function prerender(data: any) {
         title = 'Abhishek Govindarasu - Projects';
         description = "Here are some of the projects I have worked on, I have many more work in progress projects that I will be adding soon!";
     } 
-    else {
+    else if (url === '/_404') {
         title = 'Abhishek Govindarasu - 404';
         description = "The page you are looking for does not exist.";
-        console.error(`404: ${url}`);
+    }
+    else {
+        throw new Error(`Unhandled renderer route (${url}), all routes should be explicit.`)
     }
 
     return {
