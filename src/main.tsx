@@ -51,7 +51,7 @@ export async function prerender(data: any) {
                 { type: 'meta', props: { property: 'twitter:url', content: 'https://ahh.bet/' } },
                 { type: 'meta', props: { property: 'twitter:title', content: title } },
                 { type: 'meta', props: { property: 'twitter:description', content: description } },
-                { type: 'meta', props: { name: 'theme-color', content: '#131E16' } }
+                { type: 'meta', props: { name: 'theme-color', content: '#2b665e' } }
             ])
         }
     };
