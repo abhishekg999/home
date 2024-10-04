@@ -18,7 +18,7 @@ const ProjectCard = ({ title, description, github, liveDemo, background }: Proje
     <div className="absolute inset-0 bg-gray-900 transition-opacity ease-in-out group-hover:opacity-50 opacity-70 z-10" />
     <div className="absolute inset-0 p-6 flex flex-col justify-end z-20">
       <h2 className="text-3xl font-bold text-white mb-2">{title}</h2>
-      <p className="text-gray-300 mb-4">{description}</p>
+      <p className="text-gray-300 mb-4 text-base">{description}</p>
       <div className="flex gap-4">
         <a
           href={github}
@@ -77,7 +77,7 @@ export const Projects = () => {
 
 
   return (
-    <div className="min-h-screen text-white py-16 px-4 sm:px-6 lg:px-8 z-50">
+    <div className="min-h-screen text-white py-20 px-4 sm:px-6 lg:px-8 z-50">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-5xl font-bold text-center mb-12 opacity-0 animate-fadeIn">
           My Projects
