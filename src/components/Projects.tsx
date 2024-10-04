@@ -32,7 +32,7 @@ const ProjectCard = ({
       <p className="text-xs sm:text-sm lg:text-base text-gray-200 mb-3">
         {description}
       </p>
-      <div className="flex flex-wrap gap-2 mb-4">
+      {/* <div className="flex flex-wrap gap-2 mb-4">
         {tags.map((tag, index) => (
           <span
             key={index}
@@ -41,7 +41,7 @@ const ProjectCard = ({
             {tag}
           </span>
         ))}
-      </div>
+      </div> */}
       <div className="flex gap-3 text-sm md:text-base">
         <a
           href={github}
