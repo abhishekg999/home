@@ -15,6 +15,7 @@ const ProjectCard = ({
   github,
   liveDemo,
   background,
+   // @ts-ignore Need to think more how to display this (if at all)
   tags,
 }: Project) => (
   <div className="flex flex-col bg-gray-800 rounded-b-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] relative">
