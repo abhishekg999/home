@@ -1,4 +1,4 @@
-import { Github, ExternalLink } from 'lucide-preact';
+import { Github, ExternalLink, Lightbulb } from 'lucide-preact';
 
 type Project = {
   title: string;
@@ -88,6 +88,13 @@ export const Projects = () => {
               <ProjectCard {...project} />
             </div>
           ))}
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center pt-8">
+        <div className="flex items-center justify-items-center gap-4">
+          <span>More to come!</span>
+          <Lightbulb size={24} className="inline-block" />
         </div>
       </div>
     </div>
