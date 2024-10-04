@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Lightbulb } from "lucide-preact";
+import { Github, ExternalLink } from 'lucide-preact';
 
 type Project = {
   title: string;
@@ -6,49 +6,25 @@ type Project = {
   github: string;
   liveDemo: string;
   background: string;
-  tags: string[];
 };
 
-const ProjectCard = ({
-  title,
-  description,
-  github,
-  liveDemo,
-  background,
-   // @ts-ignore Need to think more how to display this (if at all)
-  tags,
-}: Project) => (
-  <div className="flex flex-col bg-gray-800 rounded-b-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] relative">
-    <div className="absolute top-0 left-0 z-[200] border-t-2 border-l-2 border-slate-500 w-8 md:w-16 h-8 md:h-16"></div>
 
-    <div className="relative flex-1 overflow-hidden rounded-b-sm">
-      <img src={background} alt={title} className="w-full rounded-b-sm" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1e2c2f97] opacity-100"></div>
-      {/* <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#08080888]"></div> */}
-    </div>
-    <div className="px-4 py-2 pb-4">
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
-        {title}
-      </h2>
-      <p className="text-xs sm:text-sm lg:text-base text-gray-200 mb-3">
-        {description}
-      </p>
-      {/* <div className="flex flex-wrap gap-2 mb-4">
-        {tags.map((tag, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-blue-700 text-white rounded-full text-[0.625rem]/[0.875rem] sm:text-xs xl:text-sm transition-colors duration-300 hover:bg-green-700"
-          >
-            {tag}
-          </span>
-        ))}
-      </div> */}
-      <div className="flex gap-3 text-sm md:text-base">
+const ProjectCard = ({ title, description, github, liveDemo, background }: Project) => (
+  <div className="relative h-96 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] group">
+    <div
+      className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-300 group-hover:scale-110"
+      style={{ backgroundImage: `url(${background})` }}
+    />
+    <div className="absolute inset-0 bg-gray-900 transition-opacity ease-in-out group-hover:opacity-50 opacity-70 z-10" />
+    <div className="absolute inset-0 p-6 flex flex-col justify-end z-20">
+      <h2 className="text-3xl font-bold text-white mb-2">{title}</h2>
+      <p className="text-gray-300 mb-4">{description}</p>
+      <div className="flex gap-4">
         <a
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors duration-300 flex items-center justify-center"
+          className="flex items-center justify-center px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors duration-300"
         >
           <Github className="mr-2" size={18} />
           GitHub
@@ -57,10 +33,10 @@ const ProjectCard = ({
           href={liveDemo}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors duration-300 flex items-center justify-center"
+          className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 transition-colors duration-300"
         >
           <ExternalLink className="mr-2" size={18} />
-          Live
+          Live Demo
         </a>
       </div>
     </div>
@@ -68,79 +44,50 @@ const ProjectCard = ({
 );
 
 export const Projects = () => {
-  const projects = [
+  const projects: Project[] = [
     {
       title: "What Notepad",
-      description:
-        "Minimal and modern notepad built with MDXEditor. Local-first. Cloud sync with login powered by Neon.",
+      description: "A sleek, modern notepad powered by MDXEditor, blending the simplicity of local-first editing with seamless Neon-backed cloud sync for storage.",
       github: "https://github.com/abhishekg999/whatv2",
       liveDemo: "https://what.ahh.bet",
       background: "/min/what-preview-min.jpg",
-      tags: [
-        "React",
-        "Next.js",
-        "PostgreSQL",
-        "Drizzle ORM",
-        "Typescript",
-        "Github OAuth",
-      ],
     },
     {
       title: "Demiya Redesign",
-      description:
-        "Redesign of the Demiya website, a local restaurant in the Bay Area. Built with performance, user experience, and SEO in mind.",
+      description: "A fresh, performance-driven redesign for Demiya, a loved Bay Area restaurant. The new site offers a modern UI, enhanced user experience, and better SEO for greater visibility.",
       github: "https://github.com/abhishekg999/demiya-redesign",
       liveDemo: "https://demiya-redesign.vercel.app/",
       background: "/min/demiya-redesign-preview-min.jpg",
-      tags: ["React", "Next.js", "Tailwind CSS", "Google Maps API"],
     },
     {
       title: "Secret",
-      description:
-        "Secure one-time link sharing service with AES-256 client-side encryption, ensuring user privacy. Data is deleted instantly upon access.",
+      description: "An secure secret-sharing service with advanced client-side AES-256 encryption. Data is deleted immediately after access, ensuring your sensitive files remain private at all times.",
       github: "https://github.com/abhishekg999/secret",
       liveDemo: "https://secret.ahh.bet",
       background: "/min/secret-preview-min.jpg",
-      tags: [
-        "Cloudflare Workers",
-        "Cloudflare D1",
-        "Hono",
-        "Drizzle ORM",
-        "Preact",
-        "Typescript",
-      ],
     },
     {
       title: "Touchdown",
-      description:
-        "Daily webgame where you connect NFL players by their mutual teammates. 25K+ users testing their NFL knowledge.",
+      description: "A highly engaging daily web game that challenges NFL fans to connect players through their shared teammates. With over 25,000 daily users, it's the ultimate test of NFL knowledge and memory.",
       github: "https://github.com/abhishekg999/Touchdown",
       liveDemo: "https://touchdown.life/",
-      background: "/min/touchdown-preview-min.jpg?",
-      tags: ["HTML", "CSS", "Javascript"],
+      background: "/min/touchdown-preview-min.jpg",
     },
   ];
 
+
   return (
-    <div className="min-h-screen text-white p-8 z-50">
-      <div className="container flex flex-col items-center justify-center space-y-4 px-4 pb-8 mx-auto">
-        <div className="text-center">
-          <h1 className="text-5xl font-bold tracking-tighter pt-6 text-white">
-            My Projects
-          </h1>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 gap-8 lg:gap-12 md:p-6 lg:p-10 xl:p-14">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
-      </div>
-
-      <div class="flex flex-col items-center pt-8">
-        <div className="flex items-center justify-items-center gap-4">
-          <span>More to come!</span>
-          <Lightbulb size={24} className="inline-block" />
+    <div className="min-h-screen text-white py-16 px-4 sm:px-6 lg:px-8 z-50">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-5xl font-bold text-center mb-12 opacity-0 animate-fadeIn">
+          My Projects
+        </h1>
+        <div className="space-y-8">
+          {projects.map((project, index) => (
+            <div key={index} className="opacity-0 animate-fadeInUp" style={{ animationDelay: `${index * 0.2}s` }}>
+              <ProjectCard {...project} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
