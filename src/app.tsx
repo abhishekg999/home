@@ -9,6 +9,7 @@ export function App() {
   return (
     <>
       <div className="flex flex-col min-h-[100dvh] relative">
+
         <div className="absolute inset-0 z-0 pointer-events-none">
 
           {/** Very light gradients overlaying the image */}
@@ -21,7 +22,7 @@ export function App() {
             src="/min/background-min.jpg"
             alt="Abstract background"
             className="w-full h-full object-cover object-right-top bg-contain bg-fixed opacity-40"
-          /> */}
+            /> */}
           {/** Background image, always full size */}
           <div className="w-full h-full bg-[url(/min/background-min.jpg)] bg-cover bg-fixed opacity-40 bg-right-top"></div>
         </div>

@@ -33,14 +33,13 @@ html {
     margin: 0;
     padding: 0;
     width: 100vw;
-
     font-size: 110%;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     overflow-y: auto;
 }
 
