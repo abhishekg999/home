@@ -40,7 +40,6 @@ export async function prerender(data: any) {
                 { type: 'link', props: { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' } },
                 { type: 'link', props: { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' } },
                 { type: 'link', props: { rel: 'manifest', href: '/site.webmanifest' } },
-                { type: 'meta', props: { name: 'viewport', content: 'width=device-width, initial-scale=1.0' } },
                 { type: 'meta', props: { name: 'title', content: title } },
                 { type: 'meta', props: { name: 'description', content: description } },
                 { type: 'meta', props: { property: 'og:type', content: 'website' } },
