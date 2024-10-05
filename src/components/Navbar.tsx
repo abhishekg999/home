@@ -40,6 +40,8 @@ export function Navbar() {
         <a
           href="https://blog.ahh.bet/"
           className="hover:underline underline-offset-4"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Blog
         </a>
