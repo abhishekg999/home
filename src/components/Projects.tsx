@@ -12,10 +12,10 @@ type Project = {
 const ProjectCard = ({ title, description, github, liveDemo, background }: Project) => (
   <div className="relative h-96 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] group">
     <div
-      className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-300 group-hover:scale-110"
+      className="absolute inset-0 bg-cover bg-center z-0 transition-all duration-300 group-hover:scale-110"
       style={{ backgroundImage: `url(${background})` }}
     />
-    <div className="absolute inset-0 bg-gray-900 transition-opacity ease-in-out group-hover:opacity-50 opacity-70 z-10" />
+    <div className="absolute inset-0 bg-gray-900 transition-opacity ease-in-out group-hover:opacity-30 opacity-60 z-10" />
     <div className="absolute inset-0 p-6 flex flex-col justify-end z-20">
       <h2 className="text-3xl font-bold text-white mb-2">{title}</h2>
       <p className="text-gray-300 mb-4 text-base">{description}</p>
