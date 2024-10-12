@@ -18,13 +18,9 @@ export function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1a2e1a] z-10 opacity-20"></div>
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1a2e1a] z-10 opacity-20"></div>
 
-          {/* <img
-            src="/min/background-min.jpg"
-            alt="Abstract background"
-            className="w-full h-full object-cover object-right-top bg-contain bg-fixed opacity-40"
-            /> */}
           {/** Background image, always full size */}
-          <div className="w-full h-full bg-[url(/min/background-min.jpg)] bg-cover bg-fixed opacity-40 bg-right-top"></div>
+          {/* <div className="w-full h-full bg-[url(/min/background-min.jpg)] bg-cover bg-fixed opacity-40 bg-right-top z-[-1]"></div> */}
+          <div className="w-full h-full fixed inset-0 bg-[url(/min/background-min.jpg)] bg-cover bg-right-top opacity-40 z-[-1]"></div>
         </div>
         <LocationProvider>
           <Navbar />
