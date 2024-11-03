@@ -14,15 +14,13 @@ export function Home() {
               </h1>
               {/* <TextReveal text="Hi, I'm Abhishek" /> */}
               {/* {content} */}
-              <div className=" text-gray-300 px-4 pt-2 text-sm md:text-base lg:text-lg mb-2">
-                I'm a <strong>Computer Science</strong> student at UC San Diego,
-                currently working as a <strong>ServiceNow Developer</strong>{" "}
-                with IT Services at UCSD.
+              <div className=" text-gray-300 px-4 pt-4 text-sm md:text-base lg:text-lg mb-2">
+                I'm a <strong>Software Engineer</strong> at <strong>Atomus</strong>.
               </div>
+
               <div className="text-gray-300 px-4 pt-2 text-sm md:text-base lg:text-lg mb-2">
-                In my free time, I play CTF (Capture The Flag) competitions,
-                specializing in <strong>Web Exploitation</strong> and{" "}
-                <strong>Algorithms</strong>.
+                I also play CTF (Capture The Flag) competitions,
+                specializing in <strong>Web Exploitation</strong>.
               </div>
             </div>
           </div>
