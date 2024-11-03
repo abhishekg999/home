@@ -10,13 +10,22 @@ type Project = {
 
 
 const ProjectCard = ({ title, description, github, liveDemo, background }: Project) => (
-  <div className="relative h-72 md:h-96 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] group">
-    <div
+  <>
+    <div className="sticky h-[99vh] rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] group">
+      {/* <div
       className="absolute inset-0 bg-cover bg-center z-0 transition-all duration-300 group-hover:scale-110"
       style={{ backgroundImage: `url(${background})` }}
-    />
-    <div className="absolute inset-0 bg-gray-900 transition-opacity ease-in-out group-hover:opacity-30 opacity-60 z-10" />
-    <div className="absolute inset-0 p-6 flex flex-col justify-end z-20">
+      /> */}
+      <iframe
+        src={liveDemo}
+        className="w-full h-full pointer-events-none"
+        style={{ transform: 'scale(1)', transformOrigin: 'top left', overflow: 'hidden', zoom: 1 }}
+        scrolling="no"
+      ></iframe>
+      <div className="absolute inset-0 bg-gray-900 transition-opacity ease-in-out group-hover:opacity-30 opacity-60 z-10" />
+    </div>
+
+    <div className="inset-0 p-6 flex flex-col justify-end z-20">
       <h2 className="font-bold text-white mb-2 text-2xl md:text-3xl">{title}</h2>
       <p className="text-gray-300 mb-4 text-sm md:text-base">{description}</p>
       <div className="flex gap-4">
@@ -40,7 +49,9 @@ const ProjectCard = ({ title, description, github, liveDemo, background }: Proje
         </a>
       </div>
     </div>
-  </div>
+
+
+  </>
 );
 
 export const Projects = () => {
@@ -91,7 +102,7 @@ export const Projects = () => {
         </div>
       </div>
 
-      <div class="flex flex-col items-center pt-8">
+      <div class="flex flex-col items-center pt-16">
         <div className="flex items-center justify-items-center gap-4">
           <span>More to come!</span>
           <Lightbulb size={24} className="inline-block" />
