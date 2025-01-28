@@ -9,7 +9,7 @@ type Project = {
 };
 
 
-const ProjectCard = ({ title, description, github, liveDemo, background }: Project) => (
+const ProjectCard = ({ title, description, github, liveDemo }: Project) => (
   <>
     <div className="sticky h-[99vh] rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-[1.02] group">
       {/* <div
