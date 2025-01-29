@@ -57,13 +57,6 @@ const ProjectCard = ({ title, description, github, liveDemo }: Project) => (
 export const Projects = () => {
   const projects: Project[] = [
     {
-      title: "What Notepad",
-      description: "A sleek, modern notepad powered by MDXEditor, blending the simplicity of local-first editing with seamless Neon-backed cloud sync for storage.",
-      github: "https://github.com/abhishekg999/whatv2",
-      liveDemo: "https://what.ahh.bet",
-      background: "/min/what-preview-min.jpg",
-    },
-    {
       title: "Demiya Redesign",
       description: "A fresh, performance-driven redesign for Demiya, a loved Bay Area restaurant. The new site offers a modern UI, enhanced user experience, and better SEO for greater visibility.",
       github: "https://github.com/abhishekg999/demiya-redesign",
@@ -71,18 +64,25 @@ export const Projects = () => {
       background: "/min/demiya-redesign-preview-min.jpg",
     },
     {
-      title: "Secret",
-      description: "An secure secret-sharing service with advanced client-side AES-256 encryption. Data is deleted immediately after access, ensuring your sensitive files remain private at all times.",
-      github: "https://github.com/abhishekg999/secret",
-      liveDemo: "https://secret.ahh.bet",
-      background: "/min/secret-preview-min.jpg",
-    },
-    {
       title: "Touchdown",
       description: "A highly engaging daily web game that challenges NFL fans to connect players through their shared teammates. With over 25,000 daily users, it's the ultimate test of NFL knowledge and memory.",
       github: "https://github.com/abhishekg999/Touchdown",
       liveDemo: "https://touchdown.life/",
       background: "/min/touchdown-preview-min.jpg",
+    },
+    {
+      title: "What Notepad",
+      description: "A sleek, modern notepad powered by MDXEditor, blending the simplicity of local-first editing with seamless Neon-backed cloud sync for storage.",
+      github: "https://github.com/abhishekg999/whatv2",
+      liveDemo: "https://what.ahh.bet",
+      background: "/min/what-preview-min.jpg",
+    },
+    {
+      title: "Secret",
+      description: "An secure secret-sharing service with advanced client-side AES-256 encryption. Data is deleted immediately after access, ensuring your sensitive files remain private at all times.",
+      github: "https://github.com/abhishekg999/secret",
+      liveDemo: "https://secret.ahh.bet",
+      background: "/min/secret-preview-min.jpg",
     },
   ];
 
