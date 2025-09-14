@@ -15,7 +15,7 @@ export function Home() {
               {/* <TextReveal text="Hi, I'm Abhishek" /> */}
               {/* {content} */}
               <div className=" text-gray-300 px-4 pt-4 text-sm md:text-base lg:text-lg mb-2">
-                I'm a <strong>Founding Engineer</strong> at <strong>Judgment Labs</strong>.
+                I'm a <strong>Founding Software Engineer</strong> at <strong>Judgment Labs</strong>.
               </div>
 
               <div className="text-gray-300 px-4 pt-2 text-sm md:text-base lg:text-lg mb-2">
