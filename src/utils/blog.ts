@@ -11,4 +11,3 @@ export const formatDate = (date: Date): string => {
 export const getReadingTime = (text: string): string => {
   return readingTime(text).text;
 };
-
