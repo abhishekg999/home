@@ -1,0 +1,122 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../utils/blog";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  showYear?: boolean;
+  showDescription?: boolean;
+  readingTime?: string;
+  variant?: "full" | "compact";
+}
+
+const {
+  post,
+  showYear = false,
+  showDescription = true,
+  readingTime,
+  variant = "full",
+} = Astro.props;
+
+const isFullVariant = variant === "full";
+---
+
+{
+  isFullVariant ? (
+    <article class="group relative bg-gradient-to-br from-gray-900/70 to-gray-900/50 backdrop-blur-lg rounded p-6 md:p-10 hover:from-gray-900/80 hover:to-gray-800/70 transition-all duration-200 hover:scale-[1.005] shadow-xl border-2 border-gray-700/50 hover:border-green-500/40">
+      <div class="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/5 group-hover:to-transparent rounded transition-all duration-300" />
+      <a href={`/blog/${post.slug}`} class="block relative z-10">
+        <div class="flex items-start justify-between gap-4 mb-4">
+          <div class="flex-1">
+            <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-green-500/90 transition-colors leading-tight">
+              {post.data.title}
+            </h2>
+            <div class="flex items-center gap-4 text-sm text-gray-400">
+              <time class="font-medium">{formatDate(post.data.date)}</time>
+              <span class="text-gray-600">•</span>
+              {readingTime && (
+                <span class="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  {readingTime}
+                </span>
+              )}
+            </div>
+          </div>
+          {showYear && (
+            <div class="hidden md:flex items-center justify-center px-3 py-1.5 rounded bg-gray-800/60 text-white text-sm font-medium shrink-0 border border-gray-700/40">
+              {post.data.date.getFullYear()}
+            </div>
+          )}
+        </div>
+        {showDescription && post.data.description && (
+          <p class="text-gray-300 mt-4 md:mt-5 leading-relaxed text-base md:text-lg line-clamp-2">
+            {post.data.description}
+          </p>
+        )}
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div class="flex gap-2 mt-4 md:mt-6 flex-wrap">
+            {post.data.tags.map((tag) => (
+              <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-gray-800/60 text-green-500/80 rounded text-xs font-medium border border-gray-700/60 group-hover:border-green-500/50 transition-colors">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        <div class="mt-4 md:mt-6 flex items-center gap-2 text-green-500/80 text-sm md:text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+          <span>Read more</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 group-hover:translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </div>
+      </a>
+    </article>
+  ) : (
+    <a
+      href={`/blog/${post.slug}`}
+      class="group bg-gray-800/40 backdrop-blur-sm rounded p-6 border-2 border-gray-700/50 hover:border-green-500/50 transition-all duration-200 hover:scale-[1.005] shadow-lg"
+    >
+      <h3 class="text-xl font-bold text-white mb-3 group-hover:text-green-500/90 transition-colors line-clamp-2">
+        {post.data.title}
+      </h3>
+      <time class="text-gray-400 text-sm">{formatDate(post.data.date)}</time>
+      {showDescription && post.data.description && (
+        <p class="text-gray-300 mt-3 text-sm line-clamp-2">
+          {post.data.description}
+        </p>
+      )}
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="flex gap-2 mt-4 flex-wrap">
+          {post.data.tags.slice(0, 2).map((tag) => (
+            <span class="px-2 py-1 bg-gray-700/40 text-green-500/80 rounded text-xs border border-gray-700/60">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </a>
+  )
+}

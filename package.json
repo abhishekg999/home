@@ -1,26 +1,35 @@
 {
-  "name": "abhishekg999.github.io",
+  "name": "home",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ahh.bet",
+  "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "preact": "^10.24.1",
-    "preact-iso": "^2.6.3",
-    "lucide-preact": "^0.436.0"
+    "@astrojs/preact": "^4.1.2",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.15.3",
+    "astro-expressive-code": "^0.41.3",
+    "lucide-preact": "^0.552.0",
+    "preact": "^10.27.2",
+    "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.9.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "prettier": "^3.3.3",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.8"
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^3.4.18"
   }
 }

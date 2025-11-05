@@ -1,0 +1,66 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogCard from "./BlogCard.astro";
+
+interface Props {
+  currentPost: CollectionEntry<"blog">;
+}
+
+const { currentPost } = Astro.props;
+
+const allPosts = (await getCollection("blog")).filter(
+  (post) => post.slug !== currentPost.slug,
+);
+
+const getRelatedPosts = () => {
+  const currentTags = currentPost.data.tags || [];
+
+  const postsWithScore = allPosts.map((post) => {
+    let score = 0;
+    const postTags = post.data.tags || [];
+
+    postTags.forEach((tag) => {
+      if (currentTags.includes(tag)) {
+        score += 3;
+      }
+    });
+
+    const daysDiff = Math.abs(
+      (post.data.date.getTime() - currentPost.data.date.getTime()) /
+        (1000 * 60 * 60 * 24),
+    );
+    if (daysDiff < 90) {
+      score += 1;
+    }
+
+    return { post, score };
+  });
+
+  postsWithScore.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return b.post.data.date.getTime() - a.post.data.date.getTime();
+  });
+
+  return postsWithScore.slice(0, 3).map((item) => item.post);
+};
+
+const relatedPosts = getRelatedPosts();
+---
+
+{
+  relatedPosts.length > 0 && (
+    <section class="mt-16 pt-12 border-t border-gray-800">
+      <h2 class="text-3xl font-bold text-white mb-8">Related Articles</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {relatedPosts.map((post) => (
+          <BlogCard
+            post={post}
+            showYear={false}
+            showDescription={true}
+            variant="compact"
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
