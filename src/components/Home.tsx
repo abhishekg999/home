@@ -9,18 +9,17 @@ export function Home() {
         <section className="w-full pt-10 pb-8 flex flex-col justify-center items-center container max-w-[620px] px-4">
           <div className="container flex flex-col items-center justify-center space-y-4 px-4">
             <div className="text-center transition-all">
-              <h1 class="text-5xl font-bold tracking-tighter pt-6 text-white">
+              <h1 class="text-4xl md:text-5xl font-bold tracking-tighter pt-6 text-white">
                 Hi, I'm Abhishek
               </h1>
-              {/* <TextReveal text="Hi, I'm Abhishek" /> */}
-              {/* {content} */}
-              <div className=" text-gray-300 px-4 pt-4 text-sm md:text-base lg:text-lg mb-2">
-                I'm a <strong>Founding Software Engineer</strong> at <strong>Judgment Labs</strong>.
+              <div className="text-gray-300 px-4 pt-4 text-sm md:text-base mb-2">
+                I'm a <strong>Founding Software Engineer</strong> at{" "}
+                <strong>Judgment Labs</strong>.
               </div>
 
-              <div className="text-gray-300 px-4 pt-2 text-sm md:text-base lg:text-lg mb-2">
-                I also play CTF (Capture The Flag) competitions,
-                specializing in <strong>Web Exploitation</strong>.
+              <div className="text-gray-300 px-4 pt-2 text-sm md:text-base mb-2">
+                I also play CTF (Capture The Flag) competitions, specializing in{" "}
+                <strong>Web Exploitation</strong>.
               </div>
             </div>
           </div>

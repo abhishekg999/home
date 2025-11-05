@@ -1,11 +1,11 @@
 export const Projects = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="flex-grow flex items-center justify-center px-4">
       <div className="text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-pulse">
           Under Construction
         </h1>
-        <p className="text-gray-400 text-lg md:text-xl">
+        <p className="text-gray-300 text-lg md:text-xl">
           Building something better
         </p>
       </div>
