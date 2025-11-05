@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "../../components/BlogCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getReadingTime } from "../../utils/blog";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const postsWithReadingTime = await Promise.all(
+  posts.map(async (post) => {
+    const { remarkPluginFrontmatter } = await post.render();
+    return {
+      ...post,
+      readingTime: getReadingTime(post.body),
+    };
+  }),
+);
+---
+
+<BaseLayout
+  title="Abhishek Govindarasu - Blog"
+  description="Technical writeups and articles about web exploitation, CTF challenges, and security research."
+>
+  <main class="flex-grow relative z-20 pt-28 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10 md:mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold mb-3 text-white/60">
+          My Posts
+        </h1>
+        <p class="text-gray-400 text-sm md:text-base">
+          {postsWithReadingTime.length}
+          {postsWithReadingTime.length === 1 ? "article" : "articles"}
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {
+          postsWithReadingTime.map((post) => (
+            <BlogCard
+              post={post}
+              showYear={true}
+              showDescription={true}
+              readingTime={post.readingTime}
+              variant="full"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</BaseLayout>
