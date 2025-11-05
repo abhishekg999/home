@@ -1,0 +1,54 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { Background } from "../components/Background";
+import { Navbar } from "../components/Navbar";
+import { ScrollProgress } from "../components/ScrollProgress";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ahh.bet/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ahh.bet/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta name="theme-color" content="#2b665e" />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div id="app">
+      <div class="flex flex-col min-h-[100dvh] relative">
+        <Background client:only="preact" transition:persist />
+        <header
+          class="fixed top-0 left-0 right-0 z-50 before:absolute before:left-0 before:right-0 before:top-0 before:h-20 before:bg-gradient-to-b before:from-black/90 before:to-transparent before:backdrop-blur-lg before:-z-10"
+          transition:persist
+        >
+          <Navbar client:only="preact" />
+        </header>
+        <slot />
+        <ScrollProgress client:only="preact" transition:persist />
+      </div>
+    </div>
+  </body>
+</html>
