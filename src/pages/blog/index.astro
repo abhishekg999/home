@@ -3,6 +3,11 @@ import { getCollection } from "astro:content";
 import BlogCard from "../../components/BlogCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getReadingTime } from "../../utils/blog";
+import {
+  generateWebPageSchema,
+  getCanonicalUrl,
+  getOgImageUrl,
+} from "../../utils/seo";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -17,11 +22,24 @@ const postsWithReadingTime = await Promise.all(
     };
   }),
 );
+
+const canonicalUrl = getCanonicalUrl("/blog");
+const ogImageUrl = getOgImageUrl("blog");
+const description =
+  "Technical writeups and articles about engineering, web exploitation, CTF challenges, and security research.";
+const schema = generateWebPageSchema(
+  "Abhishek Govindarasu - Blog",
+  description,
+  canonicalUrl,
+);
 ---
 
 <BaseLayout
   title="Abhishek Govindarasu - Blog"
-  description="Technical writeups and articles about engineering, web exploitation, CTF challenges, and security research."
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={ogImageUrl}
+  schema={schema}
 >
   <main class="flex-grow relative z-20">
     <section class="pt-24 pb-12 lg:pt-40 lg:pb-24 px-4 lg:px-8">
@@ -33,7 +51,8 @@ const postsWithReadingTime = await Promise.all(
             Technical Writings
           </h1>
           <p class="text-base lg:text-xl text-gray-400 leading-relaxed">
-            Mostly CTF writeups and security research. Looking to write more about engineering and systems programming.
+            Mostly CTF writeups and security research. Looking to write more
+            about engineering and systems programming.
           </p>
         </div>
       </div>

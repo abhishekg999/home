@@ -1,7 +1,19 @@
 ---
-title: "SDCTF 2024: DOMPurify Quirks, Blackjack, and ServiceNow (Author Writeups)"
+title: "SDCTF 2024 Author Writeups: Python 3.11 Cache Exploitation, Prototype Pollution, and Blackjack!"
 date: 2024-05-15 02:00:00
 tags:
+  [
+    web-security,
+    python,
+    dompurify,
+    prototype-pollution,
+    servicenow,
+    card-counting,
+    python-bytecode,
+    css-injection,
+    ctf-writeup,
+    author-writeup,
+  ]
 ---
 
 ![](logo.png)

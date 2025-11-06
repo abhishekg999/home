@@ -13,15 +13,6 @@
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
 
-  background: rgb(36, 36, 36);
-  background: radial-gradient(
-    circle,
-    rgba(36, 36, 36, 1) 0%,
-    rgba(14, 38, 18, 1) 79%
-  );
-  background-attachment: fixed;
-  opacity: 1;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -43,6 +34,29 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
+  background: #1a2e1a;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(36, 36, 36, 1) 0%,
+    rgba(14, 38, 18, 1) 79%
+  );
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/min/background-min.webp") no-repeat right top / cover;
+  opacity: 0.4;
+  z-index: -1;
 }
 
 #app {

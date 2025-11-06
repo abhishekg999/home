@@ -1,7 +1,16 @@
 ---
-title: CryptoCTF 2023 - Writeup (Bertrand)
+title: "CryptoCTF 2023: Bertrand - Breaking Image Encryption with Hilbert Curves and Z3"
 date: 2023-07-10 05:18:14
 tags:
+  [
+    cryptography,
+    z3-solver,
+    hilbert-curves,
+    python,
+    ctf-writeup,
+    image-encryption,
+    constraint-solving,
+  ]
 ---
 
 # **Bertrand (180 pts) 21 solves**

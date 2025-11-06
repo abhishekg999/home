@@ -1,7 +1,16 @@
 ---
-title: NewportBlakeCTF 2023 - Writeup (sudoku-revenge)
+title: "NewportBlakeCTF 2023: sudoku-revenge - Idempotent Latin Squares"
 date: 2023-12-08 00:40:38
 tags:
+  [
+    combinatorics,
+    latin-squares,
+    mathematics,
+    algorithms,
+    python,
+    ctf-writeup,
+    graph-theory,
+  ]
 ---
 
 # **sudoku-revenge | 7 solves**

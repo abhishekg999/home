@@ -1,11 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Home } from "../components/Home";
+import {
+  getOgImageUrl,
+  getCanonicalUrl,
+  generateWebsiteSchema,
+} from "../utils/seo";
+
+const canonicalUrl = getCanonicalUrl("/");
+const ogImageUrl = getOgImageUrl("home");
+const schema = generateWebsiteSchema();
 ---
 
 <BaseLayout
   title="Abhishek Govindarasu - Home"
   description="Hi, I'm Abhishek Govindarasu, a developer, computer science student, and a CTF player."
+  canonical={canonicalUrl}
+  ogImage={ogImageUrl}
+  schema={schema}
 >
   <Home client:load />
 </BaseLayout>

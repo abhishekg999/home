@@ -4,6 +4,11 @@ import { getCollection } from "astro:content";
 import { TableOfContents } from "../../components/TableOfContents";
 import RelatedPosts from "../../components/RelatedPosts.astro";
 import { formatDate, getReadingTime } from "../../utils/blog";
+import {
+  getOgImageUrl,
+  getCanonicalUrl,
+  generateArticleSchema,
+} from "../../utils/seo";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -16,11 +21,19 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content, headings } = await post.render();
 const stats = { text: getReadingTime(post.body) };
+
+const canonicalUrl = getCanonicalUrl(`/blog/${post.slug}`);
+const ogImageUrl = getOgImageUrl(post.slug);
+const schema = generateArticleSchema(post, canonicalUrl, ogImageUrl);
 ---
 
 <BaseLayout
   title={post.data.title}
   description={post.data.description || post.data.title}
+  canonical={canonicalUrl}
+  ogImage={ogImageUrl}
+  article={true}
+  schema={schema}
 >
   <main class="flex-grow relative z-20 pt-24 pb-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto flex gap-6">

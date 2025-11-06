@@ -1,11 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Projects } from "../components/Projects";
+import {
+  getOgImageUrl,
+  getCanonicalUrl,
+  generateWebPageSchema,
+} from "../utils/seo";
+
+const canonicalUrl = getCanonicalUrl("/projects");
+const ogImageUrl = getOgImageUrl("projects");
+const description =
+  "Here are some of the projects I have worked on, I have many more work in progress projects that I will be adding soon!";
+const schema = generateWebPageSchema(
+  "Abhishek Govindarasu - Projects",
+  description,
+  canonicalUrl,
+);
 ---
 
 <BaseLayout
   title="Abhishek Govindarasu - Projects"
-  description="Here are some of the projects I have worked on, I have many more work in progress projects that I will be adding soon!"
+  description={description}
+  canonical={canonicalUrl}
+  ogImage={ogImageUrl}
+  schema={schema}
 >
   <Projects />
 </BaseLayout>

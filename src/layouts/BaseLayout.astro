@@ -1,6 +1,7 @@
 ---
+import { SEO } from "astro-seo";
 import { ViewTransitions } from "astro:transitions";
-import { Background } from "../components/Background";
+import { BackgroundOverlay } from "../components/Background";
 import { Navbar } from "../components/Navbar";
 import { ScrollProgress } from "../components/ScrollProgress";
 import "../styles/global.css";
@@ -8,9 +9,21 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
+  canonical?: string;
+  ogImage?: string;
+  article?: boolean;
+  schema?: Record<string, unknown>;
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  article = false,
+  schema,
+} = Astro.props;
+const siteUrl = "https://ahh.bet";
 ---
 
 <!doctype html>
@@ -22,24 +35,48 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ahh.bet/" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ahh.bet/" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <link
+      rel="preload"
+      href="/min/background-min.webp"
+      as="image"
+      type="image/webp"
+    />
     <meta name="theme-color" content="#2b665e" />
-    <title>{title}</title>
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical || siteUrl}
+      openGraph={{
+        basic: {
+          title: title,
+          type: article ? "article" : "website",
+          image: ogImage || `${siteUrl}/og/home.png`,
+        },
+        optional: {
+          description: description,
+          siteName: "Abhishek Govindarasu",
+        },
+        image: {
+          alt: title,
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        site: "@abhigov",
+        creator: "@abhigov",
+      }}
+    />
+    {
+      schema && (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      )
+    }
     <ViewTransitions />
   </head>
   <body>
     <div id="app">
       <div class="flex flex-col min-h-[100dvh] relative">
-        <Background client:only="preact" transition:persist />
+        <BackgroundOverlay client:only="preact" transition:persist />
         <header
           class="fixed top-0 left-0 right-0 z-50 before:absolute before:left-0 before:right-0 before:top-0 before:h-20 before:bg-gradient-to-b before:from-black/90 before:to-transparent before:backdrop-blur-lg before:-z-10"
           transition:persist

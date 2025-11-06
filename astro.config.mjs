@@ -1,14 +1,17 @@
 // @ts-check
-import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import expressiveCode from "astro-expressive-code";
-import rehypeSlug from "rehype-slug";
+import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import sitemap from "@astrojs/sitemap";
+import rehypeSlug from "rehype-slug";
 
 export default defineConfig({
   site: "https://ahh.bet",
+  server: {
+    allowedHosts: [".trycloudflare.com"],
+  },
   integrations: [
     expressiveCode({
       themes: ["github-dark"],

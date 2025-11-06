@@ -1,7 +1,16 @@
 ---
-title: LACTF 2024 - Writeup (ctf-wiki)
+title: "LACTF 2024: ctf-wiki - CSP Bypass via Cookieless Iframe"
 date: 2024-03-01 01:58:35
 tags:
+  [
+    web-security,
+    xss,
+    csp-bypass,
+    flask,
+    iframe,
+    same-origin-policy,
+    ctf-writeup,
+  ]
 ---
 
 # **ctf-wiki | 38 solves**
