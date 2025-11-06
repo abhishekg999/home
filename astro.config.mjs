@@ -27,7 +27,11 @@ export default defineConfig({
     }),
     preact(),
     tailwind(),
-    sitemap(),
+    sitemap({
+      changefreq: "weekly",
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
   ],
   markdown: {
     rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]],
