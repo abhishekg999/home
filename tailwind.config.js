@@ -1,19 +1,22 @@
+import colors from "tailwindcss/colors";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        "theme-main-1": "#242424", // eerie black
-        "theme-main-2": "#1F2B28", // gunmetal
-        "theme-main-3": "#43815B", // sea green
-        "theme-main-4": "#55AC75", // jade
-        "theme-main-5": "#67D78E", // emerald
-        "theme-main-6": "#65B596", // mint
-        "theme-main-7": "#64A49A", // verdigris
-        "theme-main-8": "#62929E", // blue (munsell)
-        "theme-main-9": "#A7C2CC", // light blue
-        "theme-main-10": "#EBF2FA", // alice blue
+        gray: colors.zinc,
+        "theme-main-1": "#242424",
+        "theme-main-2": "#1F2B28",
+        "theme-main-3": "#43815B",
+        "theme-main-4": "#55AC75",
+        "theme-main-5": "#67D78E",
+        "theme-main-6": "#65B596",
+        "theme-main-7": "#64A49A",
+        "theme-main-8": "#62929E",
+        "theme-main-9": "#A7C2CC",
+        "theme-main-10": "#EBF2FA",
       },
       dropShadow: {
         glow: [

@@ -53,12 +53,7 @@ const relatedPosts = getRelatedPosts();
       <h2 class="text-3xl font-bold text-white mb-8">Related Articles</h2>
       <div class="grid md:grid-cols-3 gap-6">
         {relatedPosts.map((post) => (
-          <BlogCard
-            post={post}
-            showYear={false}
-            showDescription={true}
-            variant="compact"
-          />
+          <BlogCard post={post} />
         ))}
       </div>
     </section>
