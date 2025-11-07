@@ -1,5 +1,4 @@
 // @ts-check
-import partytown from "@astrojs/partytown";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -38,11 +37,6 @@ export default defineConfig({
     }),
     preact(),
     tailwind(),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    }),
     sitemap({
       changefreq: "weekly",
       priority: 0.7,
