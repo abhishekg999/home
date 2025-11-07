@@ -36,31 +36,32 @@ const schema = generateArticleSchema(post, canonicalUrl, ogImageUrl);
   schema={schema}
 >
   <main class="flex-grow relative z-20 pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto flex gap-6">
+    <div class="max-w-7xl mx-auto flex gap-8">
       <article
-        class="flex-1 min-w-0 bg-gray-900/70 backdrop-blur-md rounded p-5 md:p-8 lg:p-10 shadow-2xl overflow-hidden border-2 border-gray-700/50"
+        class="flex-1 min-w-0 bg-white/[0.02] backdrop-blur-sm border border-white/10 p-4 md:p-10 lg:p-12 overflow-hidden"
       >
-        <header class="mb-8 md:mb-10 pb-6 border-b border-gray-800">
+        <header class="mb-8 md:mb-12 pb-6 md:pb-8 border-b border-white/10">
           <a
             href="/blog"
-            class="text-green-500/80 hover:text-green-500 mb-6 inline-flex items-center gap-2 text-sm font-medium transition-colors"
+            class="text-[#67d78e] hover:text-[#67d78e]/80 mb-4 md:mb-6 inline-flex items-center gap-2 text-xs md:text-sm font-medium transition-colors"
           >
             ← Back to Posts
           </a>
           <h1
-            class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight"
+            class="text-xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight"
           >
             {post.data.title}
           </h1>
-          <div class="flex items-center gap-4 text-sm text-gray-400">
-            <time class="font-medium">
+          <div
+            class="flex items-center gap-3 md:gap-4 text-xs md:text-sm text-white/40 font-mono"
+          >
+            <time>
               {formatDate(post.data.date)}
             </time>
-            <span class="text-gray-600">•</span>
-            <span class="flex items-center gap-1">
+            <span class="flex items-center gap-1.5 md:gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
+                class="h-3 w-3 md:h-4 md:w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -76,9 +77,9 @@ const schema = generateArticleSchema(post, canonicalUrl, ogImageUrl);
           </div>
           {
             post.data.tags && post.data.tags.length > 0 && (
-              <div class="flex gap-2 mt-4 flex-wrap">
+              <div class="flex gap-2 mt-4 md:mt-6 flex-wrap">
                 {post.data.tags.map((tag) => (
-                  <span class="px-2.5 py-1 md:px-3 bg-gray-800/60 text-green-500/80 rounded text-xs font-medium border border-gray-700/60">
+                  <span class="px-2 py-1 md:px-3 bg-white/5 text-[#67d78e]/80 border border-white/10 text-xs font-medium">
                     {tag}
                   </span>
                 ))}
@@ -88,23 +89,23 @@ const schema = generateArticleSchema(post, canonicalUrl, ogImageUrl);
         </header>
 
         <div
-          class="prose prose-invert prose-lg max-w-none overflow-x-hidden
-        prose-headings:text-white prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-8 prose-headings:break-words
-        prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-        prose-p:text-gray-200 prose-p:leading-relaxed prose-p:mb-4 prose-p:break-words
-        prose-a:text-green-500/80 prose-a:no-underline prose-a:font-medium hover:prose-a:text-green-500 prose-a:transition-colors prose-a:break-words
+          class="prose prose-invert md:prose-lg max-w-none overflow-x-hidden
+        prose-headings:text-white prose-headings:font-bold prose-headings:mb-3 md:prose-headings:mb-4 prose-headings:mt-6 md:prose-headings:mt-8 prose-headings:break-words
+        prose-h1:text-xl md:prose-h1:text-3xl prose-h2:text-lg md:prose-h2:text-2xl prose-h3:text-base md:prose-h3:text-xl
+        prose-p:text-white/80 prose-p:leading-relaxed prose-p:mb-3 md:prose-p:mb-4 prose-p:break-words prose-p:text-sm md:prose-p:text-base
+        prose-a:text-[#67d78e] prose-a:no-underline prose-a:font-medium hover:prose-a:text-[#67d78e]/80 prose-a:transition-colors prose-a:break-words
         prose-strong:text-white prose-strong:font-semibold
-        prose-code:text-green-500/80 prose-code:text-sm prose-code:font-mono prose-code:break-words prose-code:break-all
-            prose-img:rounded prose-img:shadow-lg prose-img:my-8 prose-img:max-w-full prose-img:h-auto
+        prose-code:text-[#67d78e]/90 prose-code:text-xs md:prose-code:text-sm prose-code:font-mono prose-code:break-words prose-code:break-all
+        prose-img:my-4 md:prose-img:my-8 prose-img:max-w-full prose-img:h-auto
         prose-pre:max-w-full prose-pre:overflow-x-auto
-        prose-blockquote:border-l-4 prose-blockquote:border-green-400 prose-blockquote:bg-gray-800/50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r
-        prose-blockquote:text-gray-300 prose-blockquote:italic prose-blockquote:break-words
-        prose-ul:text-gray-200 prose-ul:break-words prose-ol:text-gray-200 prose-ol:break-words
-        prose-li:marker:text-green-500/80 prose-li:break-words
-        prose-table:border prose-table:border-gray-700 prose-table:w-full prose-table:overflow-x-auto prose-table:block
-        prose-th:bg-gray-800/80 prose-th:text-white prose-th:font-semibold prose-th:break-words
-        prose-td:border prose-td:border-gray-700 prose-td:text-gray-200 prose-td:break-words
-        prose-hr:border-gray-700"
+        prose-blockquote:border-l-2 prose-blockquote:border-[#67d78e] prose-blockquote:bg-white/5 prose-blockquote:py-2 md:prose-blockquote:py-3 prose-blockquote:px-3 md:prose-blockquote:px-4
+        prose-blockquote:text-white/70 prose-blockquote:italic prose-blockquote:break-words prose-blockquote:text-sm md:prose-blockquote:text-base
+        prose-ul:text-white/80 prose-ul:break-words prose-ul:text-sm md:prose-ul:text-base prose-ol:text-white/80 prose-ol:break-words prose-ol:text-sm md:prose-ol:text-base
+        prose-li:marker:text-[#67d78e]/80 prose-li:break-words
+        prose-table:border prose-table:border-white/10 prose-table:w-full prose-table:overflow-x-auto prose-table:block prose-table:text-xs md:prose-table:text-sm
+        prose-th:bg-white/5 prose-th:text-white prose-th:font-semibold prose-th:break-words
+        prose-td:border prose-td:border-white/10 prose-td:text-white/80 prose-td:break-words
+        prose-hr:border-white/10"
         >
           <Content />
         </div>

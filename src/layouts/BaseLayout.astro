@@ -84,7 +84,7 @@ const siteUrl = "https://ahh.bet";
           <Navbar client:only="preact" />
         </header>
         <slot />
-        <ScrollProgress client:only="preact" transition:persist />
+        {article && <ScrollProgress client:only="preact" transition:persist />}
       </div>
     </div>
   </body>

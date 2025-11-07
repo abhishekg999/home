@@ -16,13 +16,23 @@ export default defineConfig({
     expressiveCode({
       themes: ["github-dark"],
       styleOverrides: {
-        borderRadius: "0.75rem",
-        borderColor: "rgb(55, 65, 81)",
+        borderRadius: "0.25rem",
+        borderColor: "rgba(255, 255, 255, 0.1)",
         codeFontSize: "0.875rem",
         uiFontSize: "0.875rem",
+        uiPaddingBlock: "0.5rem",
+        frames: {
+          editorBackground: "rgba(255, 255, 255, 0.02)",
+          terminalBackground: "rgba(255, 255, 255, 0.02)",
+          shadowColor: "transparent",
+        },
       },
       frames: {
         showCopyToClipboardButton: true,
+      },
+      defaultProps: {
+        wrap: false,
+        overridesByLang: {},
       },
     }),
     preact(),

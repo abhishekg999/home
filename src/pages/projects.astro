@@ -1,21 +1,24 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import { Projects } from "../components/Projects";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getProjectsData } from "../utils/projects";
 import {
-  getOgImageUrl,
-  getCanonicalUrl,
-  generateWebPageSchema,
+generateWebPageSchema,
+getCanonicalUrl,
+getOgImageUrl,
 } from "../utils/seo";
 
 const canonicalUrl = getCanonicalUrl("/projects");
 const ogImageUrl = getOgImageUrl("projects");
 const description =
-  "Here are some of the projects I have worked on, I have many more work in progress projects that I will be adding soon!";
+  "Tools and utilities for developers and security researchers, more to come!";
 const schema = generateWebPageSchema(
   "Abhishek Govindarasu - Projects",
   description,
   canonicalUrl,
 );
+
+const projects = await getProjectsData();
 ---
 
 <BaseLayout
@@ -25,5 +28,5 @@ const schema = generateWebPageSchema(
   ogImage={ogImageUrl}
   schema={schema}
 >
-  <Projects />
+  <Projects projects={projects} client:only="preact" />
 </BaseLayout>

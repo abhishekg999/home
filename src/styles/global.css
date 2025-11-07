@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,25 +67,45 @@ body::after {
   flex-direction: column;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
-::-webkit-scrollbar-track-piece {
-  background-color: var(--color-background);
+*:hover {
+  scrollbar-color: rgba(103, 215, 142, 0.4) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #909090;
-  outline-offset: -2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #bbbbbb;
+  background: rgba(103, 215, 142, 0.4);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.scrollbar-thin:hover {
+  scrollbar-color: rgba(103, 215, 142, 0.3) transparent;
 }
 
 .scrollbar-thin::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
@@ -91,12 +113,12 @@ body::after {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #4b5563;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background-color: #6b7280;
+  background: rgba(103, 215, 142, 0.3);
 }
 
 img {
@@ -191,3 +213,81 @@ img {
   }
 }
 /* animation for fading in text END */
+
+/* Code block styling */
+.expressive-code {
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .expressive-code {
+    margin: 1.5rem 0;
+  }
+}
+
+.expressive-code .frame {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+}
+
+.expressive-code pre {
+  overflow-x: auto !important;
+  max-width: 100% !important;
+  font-size: 0.7rem !important;
+}
+
+@media (min-width: 768px) {
+  .expressive-code pre {
+    font-size: 0.875rem !important;
+  }
+}
+
+.expressive-code code {
+  white-space: pre !important;
+  word-wrap: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.expressive-code .copy button {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  transition: all 0.2s;
+  box-shadow: none !important;
+  font-size: 0.6rem !important;
+  padding: 0.25rem 0.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .expressive-code .copy button {
+    font-size: 0.7rem !important;
+    padding: 0.375rem 0.625rem !important;
+  }
+}
+
+.expressive-code .copy button:hover {
+  background: rgba(103, 215, 142, 0.1) !important;
+  border-color: rgba(103, 215, 142, 0.3) !important;
+  color: rgba(103, 215, 142, 0.8) !important;
+  box-shadow: none !important;
+}
+
+.expressive-code .copy button[data-copied="true"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: none !important;
+}
+
+.expressive-code .copy button .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
