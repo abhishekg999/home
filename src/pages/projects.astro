@@ -1,5 +1,5 @@
 ---
-import { Projects } from "../components/Projects";
+import { Projects as ProjectsComponent } from "../components/Projects";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getProjectsData } from "../utils/projects";
 import {
@@ -28,5 +28,5 @@ const projects = await getProjectsData();
   ogImage={ogImageUrl}
   schema={schema}
 >
-  <Projects projects={projects} client:only="preact" />
+  <ProjectsComponent projects={projects} client:only="preact" />
 </BaseLayout>
