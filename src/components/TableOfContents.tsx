@@ -64,7 +64,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
     <nav class="hidden xl:block sticky top-24 max-h-[60vh]">
       <div class="bg-white/[0.02] backdrop-blur-sm border border-white/10 overflow-hidden flex flex-col max-h-[60vh]">
         <div class="px-4 py-4 border-b border-white/10 sticky top-0 z-10">
-          <h3 class="text-xs font-semibold text-white/60 uppercase tracking-wider">
+          <h3 class="text-sm font-semibold text-white/60 uppercase tracking-wider">
             On This Page
           </h3>
         </div>
@@ -77,7 +77,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
               <button
                 data-slug={heading.slug}
                 onClick={() => scrollToHeading(heading.slug)}
-                class={`text-left w-full text-xs py-2 px-2 transition-all ${
+                class={`text-left w-full text-sm py-2 px-2 transition-all ${
                   activeId === heading.slug
                     ? "text-[#67d78e] bg-[#67d78e]/10 font-medium border-l-2 border-[#67d78e]"
                     : "text-white/40 hover:text-white/80 hover:bg-white/5 border-l-2 border-transparent"
