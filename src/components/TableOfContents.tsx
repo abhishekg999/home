@@ -61,8 +61,8 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   if (headings.length === 0) return null;
 
   return (
-    <nav class="hidden xl:block sticky top-24 max-h-[calc(100vh-8rem)]">
-      <div class="bg-white/[0.02] backdrop-blur-sm border border-white/10 overflow-hidden flex flex-col max-h-[calc(100vh-8rem)]">
+    <nav class="hidden xl:block sticky top-24 max-h-[60vh]">
+      <div class="bg-white/[0.02] backdrop-blur-sm border border-white/10 overflow-hidden flex flex-col max-h-[60vh]">
         <div class="px-4 py-4 border-b border-white/10 sticky top-0 z-10">
           <h3 class="text-xs font-semibold text-white/60 uppercase tracking-wider">
             On This Page
