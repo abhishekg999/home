@@ -1,7 +1,15 @@
 ---
 title: "SDCTF 2024: fancy_text_viewer - DOMPurify Bypass via CSS Injection"
 date: 2024-05-15 14:00:00
-tags: [sdctf-2024, web-security, dompurify, css-injection, ctf-writeup, author-writeup]
+tags:
+  [
+    sdctf-2024,
+    web-security,
+    dompurify,
+    css-injection,
+    ctf-writeup,
+    author-writeup,
+  ]
 ---
 
 ![](logo.png)
@@ -101,64 +109,71 @@ We also have an ejs template for `index.ejs`, which is as follows:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-        Fancy Text Viewer
-        <% if (sharedby) { %>
-            | Shared by <%- sharedby %>
-        <% } %>
+      Fancy Text Viewer <% if (sharedby) { %> | Shared by <%- sharedby %> <% }
+      %>
     </title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h2>Hello <%- username %>!</h2>
-        <p>Enter your text below, and we will make it fancy!</p>
+      <h2>Hello <%- username %>!</h2>
+      <p>Enter your text below, and we will make it fancy!</p>
 
-        <form action="/view" method="get">
-            <input type="text" name="content" placeholder="Enter your text here" required>
-            <br>
-            <br>
-            <button type="submit">Submit</button>
-        </form>
+      <form action="/view" method="get">
+        <input
+          type="text"
+          name="content"
+          placeholder="Enter your text here"
+          required
+        />
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+      </form>
 
-        <br>
-        <% if (flag) { %>
-            <p>Oh? You seem to have a flag! You can view it <a href="view?content=<%- flag %>">here</a>!</p>
-        <% } %>
+      <br />
+      <% if (flag) { %>
+      <p>
+        Oh? You seem to have a flag! You can view it
+        <a href="view?content=<%- flag %>">here</a>!
+      </p>
+      <% } %> <% if (username !=='GUEST' ) { %>
+      <div>
+        <p>Do you like this site? Share it to a friend!</p>
+        <button id="shareButton">Share</button>
+        <script>
+          window.onload = () => {
+            let sharingUrl = new URL(window.location.href);
 
-        <% if (username !=='GUEST' ) { %>
-            <div>
-                <p>Do you like this site? Share it to a friend! </p>
-                <button id="shareButton">Share</button>
-                <script>
-                    window.onload = () => {
-                        let sharingUrl = new URL(window.location.href);
+            const usernameCookie = document.cookie
+              .split("; ")
+              .find((cookie) => cookie.startsWith("username="));
+            if (usernameCookie) {
+              const usernameValue = usernameCookie.split("=")[1];
+              sharingUrl.searchParams.append("sharedby", usernameValue);
+            }
 
-                        const usernameCookie = document.cookie.split('; ').find(cookie => cookie.startsWith('username='));
-                        if (usernameCookie) {
-                            const usernameValue = usernameCookie.split('=')[1];
-                            sharingUrl.searchParams.append('sharedby', usernameValue);
-                        }
-
-                        document.getElementById('shareButton').addEventListener('click', () => {
-                            navigator.share({
-                                title: 'Fancy Text Viewer',
-                                text: 'Check out this fancy text viewer!',
-                                url: sharingUrl
-                            })
-                        });
-                    }
-                </script>
-            </div>
-        <% } %>
+            document
+              .getElementById("shareButton")
+              .addEventListener("click", () => {
+                navigator.share({
+                  title: "Fancy Text Viewer",
+                  text: "Check out this fancy text viewer!",
+                  url: sharingUrl,
+                });
+              });
+          };
+        </script>
+      </div>
+      <% } %>
     </div>
-    <br>
-</body>
+    <br />
+  </body>
 </html>
 ```
 
@@ -489,4 +504,3 @@ a[href^="view\?content\=sdctf{f"] {
 - https://new-blog.ch4n3.kr/bypassing-dompurify-possibilities/
 - https://research.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass/
 - https://mizu.re/post/intigriti-october-2023-xss-challenge
-
