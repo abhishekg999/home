@@ -12,6 +12,7 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.10",
     "@astrojs/preact": "^4.1.2",
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",

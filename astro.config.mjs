@@ -1,4 +1,5 @@
 // @ts-check
+import mdx from "@astrojs/mdx";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -35,6 +36,7 @@ export default defineConfig({
         overridesByLang: {},
       },
     }),
+    mdx(),
     preact(),
     tailwind(),
     sitemap({
