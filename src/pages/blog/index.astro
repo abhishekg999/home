@@ -76,6 +76,16 @@ const schema = generateWebPageSchema(
                           </h2>
                         </div>
 
+                        {post.data.tags && post.data.tags.length > 0 && (
+                          <div class="flex flex-wrap gap-2 mb-2 lg:mb-3">
+                            {post.data.tags.slice(0, 3).map((tag) => (
+                              <span class="inline-flex items-center px-2 py-0.5 lg:px-2.5 lg:py-1 rounded text-xs font-medium bg-[#67d78e]/10 text-[#67d78e]/90 border border-[#67d78e]/20 group-hover:bg-[#67d78e]/20 group-hover:border-[#67d78e]/40 transition-all">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+
                         <div class="flex items-center gap-3 lg:gap-6 text-xs lg:text-sm font-mono text-white/40 group-hover:text-white/60 transition-colors">
                           <div class="flex items-center gap-1.5 lg:gap-2">
                             <svg

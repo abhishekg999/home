@@ -30,6 +30,18 @@ const year = post.data.date.getFullYear().toString();
         {post.data.title}
       </h3>
 
+      {
+        post.data.tags && post.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2">
+            {post.data.tags.slice(0, 3).map((tag) => (
+              <span class="inline-flex items-center px-2 py-0.5 lg:px-2.5 lg:py-1 rounded text-xs font-medium bg-[#67d78e]/10 text-[#67d78e]/90 border border-[#67d78e]/20 group-hover:bg-[#67d78e]/20 group-hover:border-[#67d78e]/40 transition-all">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+
       <div
         class="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm text-white/60 mt-auto"
       >
