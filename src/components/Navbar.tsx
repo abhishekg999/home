@@ -1,15 +1,24 @@
-import { useEffect, useRef, useState } from "preact/hooks";
-import { isErrorPage } from "../utils/helpers";
+import { useEffect, useState } from "preact/hooks";
+import { BULBA_PATH, STORAGE_KEY } from "../utils/constants";
+
+const navLinks = [
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+];
 
 export function Navbar() {
   const [currentPath, setCurrentPath] = useState(
     typeof window !== "undefined" ? window.location.pathname : "/",
   );
-  const isInitialRender = useRef(true);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
-    isInitialRender.current = false;
+
+    if (!sessionStorage.getItem(STORAGE_KEY)) {
+      setShouldAnimate(true);
+      sessionStorage.setItem(STORAGE_KEY, "true");
+    }
 
     const handleNavigation = () => {
       setCurrentPath(window.location.pathname);
@@ -20,42 +29,47 @@ export function Navbar() {
       document.removeEventListener("astro:after-swap", handleNavigation);
   }, []);
 
-  const showAnimation = isInitialRender.current && !isErrorPage(currentPath);
+  const isActive = (href: string) => currentPath.startsWith(href);
 
   return (
-    <header className="px-4 lg:px-6 h-14 flex py-2 fixed-top z-50">
-      <a href="/">
+    <div className="px-4 lg:px-6 h-14 flex items-center py-2 z-50">
+      <a href="/" className="hover:scale-110 transition-transform">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
           viewBox="0 0 1123 1072"
-          fill-rule="nonzero"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          className={`width-14 h-14 sm:w-16 sm:h-16 animated-svg ${showAnimation ? "animated-svg-draw" : ""}`}
+          fillRule="nonzero"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`w-10 h-10 sm:w-12 sm:h-12 animated-svg ${shouldAnimate ? "animated-svg-draw" : ""}`}
         >
-          <path d="M706.763 591.198C487.108 734.611 271.782 630.654 245.675 587.593C245.675 587.593 243.241 461.371 286.977 398.907C286.977 398.907 275.227 359.998 297.734 311.221C297.734 311.221 344.121 303.407 386.147 325.166C386.147 325.166 475.02 281.754 586.899 316.732C586.899 316.732 651.192 275.357 707.316 275.891C707.316 275.891 722.547 343.267 712.65 381.429C712.65 381.429 732.389 410.685 740.274 448.182C740.274 448.182 912.349 523.818 832.191 757.558C832.191 757.558 785.408 768.211 763.526 760.355C763.526 760.355 791.888 714.947 793.129 609.486C793.129 609.486 793.62 771.895 723.623 803.366C723.623 803.366 651.23 813.887 622.556 801.725C622.556 801.725 617.352 726.491 619.536 708.958L619.295 742.611C619.295 742.611 474.538 748.03 421.751 699.374L451.38 718.183C454.827 763.896 427.123 789.498 427.123 789.498C427.123 789.498 348.064 794.96 337.774 788.237C337.774 788.237 312.613 771.607 296.482 625.491" />
+          <path d={BULBA_PATH} />
         </svg>
       </a>
 
-      <nav
-        className={`ml-auto flex gap-4 sm:gap-6 p-4 text-lg font-medium ${showAnimation ? "animation-text-fade-in-x" : ""}`}
-      >
-        <a href="/projects" className="hover:underline underline-offset-4">
-          Projects
-        </a>
+      <nav className="ml-auto flex gap-5 sm:gap-6 text-sm font-medium">
+        {navLinks.map(({ href, label }) => (
+          <a
+            key={href}
+            href={href}
+            className={`transition-colors ${
+              isActive(href)
+                ? "text-white/90"
+                : "text-white/40 hover:text-white/70"
+            }`}
+          >
+            {label}
+          </a>
+        ))}
         <a
-          href={`/Resume_AbhishekGovindarasu.pdf?v=${new Date().getTime()}`}
-          className="hover:underline underline-offset-4"
+          href="/Resume_AbhishekGovindarasu.pdf"
+          className="text-white/40 hover:text-white/70 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
         >
           Resume
         </a>
-        <a href="/blog" className="hover:underline underline-offset-4">
-          Blog
-        </a>
       </nav>
-    </header>
+    </div>
   );
 }

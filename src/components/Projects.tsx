@@ -7,15 +7,14 @@ interface ProjectsProps {
 export const Projects = ({ projects }: ProjectsProps) => {
   return (
     <main className="flex-grow relative z-20">
-      <section className="pt-24 pb-12 lg:pt-40 lg:pb-24 px-4 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-16 lg:mb-24">
-            <h1 className="text-4xl lg:text-7xl font-bold tracking-tight text-balance mb-4 lg:mb-6">
+      <section className="pt-28 pb-16 lg:pt-44 lg:pb-28 px-4 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="max-w-2xl mb-12 lg:mb-20">
+            <h1 className="text-3xl lg:text-5xl font-bold tracking-tight mb-4">
               Projects
             </h1>
-            <p className="text-base lg:text-xl text-gray-400 leading-relaxed">
-              Tools and utilities for developers and security researchers, more
-              to come!
+            <p className="text-sm lg:text-base text-white/50 leading-relaxed">
+              Tools and utilities for developers and security researchers.
             </p>
           </div>
 
@@ -28,20 +27,19 @@ export const Projects = ({ projects }: ProjectsProps) => {
                 rel="noopener noreferrer"
                 className="group block relative"
               >
-                <div className="border-t border-white/10 py-8 lg:py-12 transition-all duration-300 hover:bg-white/[0.02]">
-                  <div className="flex items-start lg:items-center gap-6 lg:gap-12">
+                <div className="border-t border-white/10 py-6 lg:py-10 transition-all duration-300 hover:bg-white/[0.02]">
+                  <div className="flex items-start lg:items-center gap-5 lg:gap-8">
                     <div
-                      className="w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center flex-shrink-0 border border-white/10 group-hover:border-[#67d78e]/30 transition-all duration-300 relative overflow-hidden"
+                      className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center flex-shrink-0 border border-white/10 group-hover:border-accent/30 transition-all duration-300 relative overflow-hidden"
                       style={{
-                        background: `linear-gradient(135deg, ${project.color}25 0%, ${project.color}10 100%)`,
+                        background: `linear-gradient(135deg, ${project.color}20 0%, ${project.color}08 100%)`,
                       }}
                     >
                       <span
-                        className="text-white/90 font-normal leading-none relative z-10"
+                        className="text-white/80 font-normal leading-none relative z-10"
                         style={{
                           fontFamily: "Teko, sans-serif",
-                          fontSize:
-                            project.icon.length > 1 ? "3.75rem" : "4.5rem",
+                          fontSize: project.icon.length > 1 ? "2.5rem" : "3rem",
                           letterSpacing: "-0.02em",
                         }}
                       >
@@ -56,29 +54,29 @@ export const Projects = ({ projects }: ProjectsProps) => {
                     </div>
 
                     <div className="flex-grow min-w-0 pr-8">
-                      <div className="flex items-baseline gap-4 mb-3">
-                        <h2 className="text-2xl lg:text-4xl font-semibold text-white group-hover:text-[#67d78e] transition-colors">
+                      <div className="flex items-baseline gap-4 mb-2">
+                        <h2 className="text-xl lg:text-2xl font-semibold text-white group-hover:text-accent transition-colors">
                           {project.name}
                         </h2>
                       </div>
 
-                      <p className="text-base lg:text-lg text-white/60 group-hover:text-white/70 transition-colors mb-4 max-w-3xl">
+                      <p className="text-sm lg:text-base text-white/50 group-hover:text-white/60 transition-colors mb-3 max-w-2xl">
                         {project.description}
                       </p>
 
-                      <div className="flex items-center gap-3 text-sm font-mono text-white/40 group-hover:text-white/60 transition-colors">
+                      <div className="flex items-center gap-3 text-xs font-mono text-white/30 group-hover:text-white/50 transition-colors">
                         <span>
                           {project.url.replace("https://", "").replace("/", "")}
                         </span>
                       </div>
                     </div>
 
-                    <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-                      <span className="text-sm font-mono text-white/30 group-hover:text-white/50 transition-colors">
+                    <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+                      <span className="text-xs font-mono text-white/20 group-hover:text-white/40 transition-colors">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <svg
-                        className="w-4 h-4 text-white/30 group-hover:text-white/60 group-hover:translate-x-1 transition-all"
+                        className="w-3.5 h-3.5 text-white/20 group-hover:text-white/50 group-hover:translate-x-1 transition-all"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -93,7 +91,7 @@ export const Projects = ({ projects }: ProjectsProps) => {
                     </div>
                   </div>
 
-                  <div className="absolute left-0 top-0 w-1 h-0 group-hover:h-full transition-all duration-300 bg-[#67d78e]" />
+                  <div className="absolute left-0 top-0 w-1 h-0 group-hover:h-full transition-all duration-300 bg-accent" />
                 </div>
               </a>
             ))}

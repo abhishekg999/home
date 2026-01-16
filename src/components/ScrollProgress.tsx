@@ -33,15 +33,15 @@ export function ScrollProgress() {
       aria-label="Scroll to top"
     >
       <div class="relative">
-        <div class="w-10 h-10 md:w-14 md:h-14 bg-white/[0.02] backdrop-blur-sm border border-white/10 group-hover:border-[#67d78e]/50 transition-all relative overflow-hidden">
+        <div class="w-10 h-10 md:w-14 md:h-14 bg-white/[0.02] backdrop-blur-sm border border-white/10 group-hover:border-accent/50 transition-all relative overflow-hidden">
           <div
-            class="absolute bottom-0 left-0 right-0 bg-[#67d78e]/30 transition-all"
+            class="absolute bottom-0 left-0 right-0 bg-accent/30 transition-all"
             style={{ height: `${progress}%` }}
           />
           <div class="absolute inset-0 flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 md:h-5 md:w-5 text-[#67d78e] relative z-10 group-hover:scale-110 transition-transform"
+              class="h-4 w-4 md:h-5 md:w-5 text-accent relative z-10 group-hover:scale-110 transition-transform"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -55,7 +55,7 @@ export function ScrollProgress() {
             </svg>
           </div>
         </div>
-        <div class="absolute -top-10 right-0 bg-white/5 backdrop-blur-sm border border-white/10 text-[#67d78e] px-3 py-1 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+        <div class="absolute -top-10 right-0 bg-white/5 backdrop-blur-sm border border-white/10 text-accent px-3 py-1 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           {Math.round(progress)}%
         </div>
       </div>
