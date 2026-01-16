@@ -27,8 +27,7 @@
     "rehype-slug": "^6.0.0",
     "satori": "^0.18.3",
     "satori-html": "^0.3.2",
-    "sharp": "^0.34.4",
-    "supascan": "^0.3.0"
+    "sharp": "^0.34.4"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
