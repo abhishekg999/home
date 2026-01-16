@@ -61,26 +61,26 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   if (headings.length === 0) return null;
 
   return (
-    <nav class="hidden xl:block sticky top-24 max-h-[60vh]">
-      <div class="bg-white/[0.02] backdrop-blur-sm border border-white/10 overflow-hidden flex flex-col max-h-[60vh]">
-        <div class="px-4 py-4 border-b border-white/10 sticky top-0 z-10">
-          <h3 class="text-sm font-semibold text-white/60 uppercase tracking-wider">
-            On This Page
+    <nav class="hidden xl:block sticky top-28 max-h-[60vh]">
+      <div class="overflow-hidden flex flex-col max-h-[60vh]">
+        <div class="pb-3 mb-2 border-b border-white/10">
+          <h3 class="text-[10px] font-medium text-white/30 uppercase tracking-widest">
+            Contents
           </h3>
         </div>
-        <ul class="space-y-0.5 p-3 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+        <ul class="space-y-0 overflow-y-auto scrollbar-thin">
           {headings.map((heading) => (
             <li
               key={heading.slug}
-              style={{ paddingLeft: `${(heading.depth - 1) * 0.75}rem` }}
+              style={{ paddingLeft: `${(heading.depth - 1) * 0.5}rem` }}
             >
               <button
                 data-slug={heading.slug}
                 onClick={() => scrollToHeading(heading.slug)}
-                class={`text-left w-full text-sm py-2 px-2 transition-all ${
+                class={`text-left w-full text-xs py-1.5 px-2 transition-all border-l ${
                   activeId === heading.slug
-                    ? "text-[#67d78e] bg-[#67d78e]/10 font-medium border-l-2 border-[#67d78e]"
-                    : "text-white/40 hover:text-white/80 hover:bg-white/5 border-l-2 border-transparent"
+                    ? "text-white/70 border-accent"
+                    : "text-white/30 hover:text-white/60 border-transparent"
                 }`}
               >
                 {heading.text}
