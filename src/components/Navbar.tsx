@@ -1,5 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
-import { BULBA_PATH, STORAGE_KEY } from "../utils/constants";
+import { BULBA_PATH } from "../utils/constants";
 
 const navLinks = [
   { href: "/projects", label: "Projects" },
@@ -10,17 +10,13 @@ export function Navbar() {
   const [currentPath, setCurrentPath] = useState(
     typeof window !== "undefined" ? window.location.pathname : "/",
   );
-  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
 
-    if (!sessionStorage.getItem(STORAGE_KEY)) {
-      setShouldAnimate(true);
-      sessionStorage.setItem(STORAGE_KEY, "true");
-    }
-
     const handleNavigation = () => {
+      setShouldAnimate(false);
       setCurrentPath(window.location.pathname);
     };
 
