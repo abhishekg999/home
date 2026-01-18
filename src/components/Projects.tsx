@@ -66,7 +66,7 @@ export const Projects = ({ projects }: ProjectsProps) => {
 
                       <div className="flex items-center gap-3 text-xs font-mono text-white/30 group-hover:text-white/50 transition-colors">
                         <span>
-                          {project.url.replace("https://", "").replace("/", "")}
+                          {project.url.replace("https://", "").replace(/\/$/, "")}
                         </span>
                       </div>
                     </div>

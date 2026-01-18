@@ -8,6 +8,13 @@ export interface ProjectData {
 
 const PROJECTS: ProjectData[] = [
   {
+    name: "Supascan",
+    description: "Automated security scanner for Supabase databases. Detects exposed data, analyzes Row Level Security (RLS) policies, tests RPC functions, and generates comprehensive security reports.",
+    url: "https://github.com/abhishekg999/supascan",
+    icon: "Ss",
+    color: "#3ECF8E",
+  },
+  {
     name: "CLI Toolkit",
     description: "Day to day terminal utilities for modern developers.",
     url: "https://cli.ahh.bet/",
@@ -36,20 +43,6 @@ const PROJECTS: ProjectData[] = [
     url: "https://markdown.ahh.bet/",
     icon: "Md",
     color: "#DD88AB",
-  },
-  {
-    name: "Reflect HTML",
-    description: "Share HTML snippets via URL-encoded links",
-    url: "https://reflect.ahh.bet/",
-    icon: "Rf",
-    color: "#FF8802",
-  },
-  {
-    name: "What",
-    description: "A fast notepad for quick thoughts and temporary notes.",
-    url: "https://what.ahh.bet/",
-    icon: "Wt",
-    color: "#5450FF",
   },
 ] as const;
 
