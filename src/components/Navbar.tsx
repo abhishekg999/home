@@ -57,14 +57,14 @@ export function Navbar() {
             {label}
           </a>
         ))}
-        <a
+        {/* <a
           href="/Resume_AbhishekGovindarasu.pdf"
           className="text-white/40 hover:text-white/70 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
         >
           Resume
-        </a>
+        </a> */}
       </nav>
     </div>
   );
